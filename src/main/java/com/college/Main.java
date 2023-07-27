@@ -1,6 +1,6 @@
 package com.college;
 
-import com.college.student.student;
+import com.college.student.Student;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -8,16 +8,13 @@ import java.util.Scanner;
 public class Main {
     static Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        // the class needs to be loaded only once in the main
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
-            String URL = "jdbc:mysql://localhost:3306/college";
-            String userName = "root";
-            String password = "@bdul1ah";
+        Database database=new Database();
 
-            student student_obj = new student(URL, userName, password);
-
-
-
+        Student student_obj = new Student(database);
         boolean condition = true;
 
         while (condition) {
@@ -45,5 +42,7 @@ public class Main {
                 default -> System.err.println("*** Enter the correct choice ***");
             }
         }
+
+        database.close();
     }
 }
