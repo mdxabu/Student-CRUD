@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Student {
     Scanner in = new Scanner(System.in);
-    private Database database;
+    private final Database database;
 
     public Student(Database database) {
         this.database = database;
@@ -90,18 +90,19 @@ public class Student {
     }
 
     // ! Delete Method
-    public String deleteDetials() throws SQLException {
+    public String deleteDetials() {
 
-
-        Connection connection = DriverManager.getConnection(Database.HOST, Database.USERNAME, Database.PASSWORD);
-        Statement statement = connection.createStatement();
-        int id;
-        System.out.println("Enter the student ID to delete:");
-        id = in.nextInt();
-        String query = "DELETE FROM student WHERE id=" + id + ";";
-        statement.executeUpdate(query);
-
-
+        try {
+            Connection connection = DriverManager.getConnection(Database.HOST, Database.USERNAME, Database.PASSWORD);
+            Statement statement = connection.createStatement();
+            int id;
+            System.out.println("Enter the student ID to delete:");
+            id = in.nextInt();
+            String query = "DELETE FROM student WHERE id=" + id + ";";
+            statement.executeUpdate(query);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return "Detials are deleted from database successfully!!!";
     }
 
