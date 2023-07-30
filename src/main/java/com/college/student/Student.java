@@ -7,11 +7,12 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Student {
-    Scanner in = new Scanner(System.in);
+    Scanner in;
     private final Database database;
 
-    public Student(Database database) {
+    public Student(Database database, Scanner scanner) {
         this.database = database;
+        in = scanner;
     }
 
     // ! Insert Method

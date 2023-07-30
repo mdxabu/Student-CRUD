@@ -24,4 +24,8 @@ public class InStream extends InputStream {
     public int read() throws IOException {
         return in.read();
     }
+
+    public void close() throws IOException {
+        in.close();
+    }
 }
