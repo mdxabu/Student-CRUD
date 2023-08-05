@@ -1,29 +1,23 @@
 package com.college;
 
-import com.college.student.Student;
-import com.input.InStream;
+import com.college.student.student;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Main implements Runnable{
-    private final Scanner scanner;
-    private final Database database;
-    private final InStream in;
+public class Main {
+    static Scanner in = new Scanner(System.in);
 
-    /**
-     * You can change the InStream() to InStream(URL) to get the input from a server
-     * in case you want to implement an internet connection
-     */
-    public Main(Database database){
-        in=new InStream();
-        this.database=database;
-        this.scanner= in.getScanner();
-    }
+    public static void main(String[] args) throws SQLException {
 
-    public void run(){
-        Student student_obj = new Student(database, scanner);
+        String URL = "jdbc:mysql://localhost:3306/college";
+        String userName = "root";
+        String password = "@bdul1ah";
+
+        student student_obj = new student(URL, userName, password);
+
+
+
         boolean condition = true;
 
         while (condition) {
@@ -34,11 +28,12 @@ public class Main implements Runnable{
             System.out.println("5.Exit this Execution");
             System.out.println("*******************************************");
             System.out.println("Enter your choice:");
-            int choice=scanner.nextInt();
+            int choice=in.nextInt();
             switch (choice) {
                 case 1 -> System.out.println("*******************************************\n"
                         +student_obj.insertDetials()
                         +"\n*******************************************\n");
+
                 case 2 -> System.out.println("*******************************************\n"
                         +student_obj.deleteDetials()
                         +"\n*******************************************\n");
@@ -50,20 +45,5 @@ public class Main implements Runnable{
                 default -> System.err.println("*** Enter the correct choice ***");
             }
         }
-    }
-
-    public void close() throws IOException {
-        this.scanner.close();
-        this.in.close();
-    }
-
-    public static void main(String[] args) throws SQLException, ClassNotFoundException, IOException {
-        // the class needs to be loaded only once in the main
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Database database=new Database();
-        Main main=new Main(database);
-        main.run();
-        main.close();
-        database.close();
     }
 }
