@@ -82,12 +82,11 @@ public class student {
                     statement.executeUpdate(query);
                 }
                 case 2 -> {
-                    System.out.println("Enter the student id to find:");
-                    id = in.nextInt();
+                    
                     System.out.println("Enter the department to be update:");
                     in.nextLine();
                     String upd_dept = in.nextLine();
-                    String query = "UPDATE student SET name=" + "'" + upd_dept + "'" + "WHERE id=" + id + ";";
+                    String query = "UPDATE student SET dept=" + "'" + upd_dept + "'" + "WHERE id=" + id + ";";
                     statement.executeUpdate(query);
                 }
             }
