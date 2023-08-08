@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 import com.college.database.DatabaseConnection;
+import com.college.history.DatabaseHistory;
 
 public class ElectricalandElectronicsEngineering {
 	
@@ -16,11 +17,15 @@ public class ElectricalandElectronicsEngineering {
 	
 	Statement EEEStatement = dbEEE.getConnection();
 	
+	DatabaseHistory historyEEE = new DatabaseHistory();
+	
+	String stdName;
+	
 	public void insertEEEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
-		
+		this.stdName=name;
 		System.out.println("Enter the email:");
 		String email = in.nextLine();
 		
@@ -31,10 +36,8 @@ public class ElectricalandElectronicsEngineering {
 		
 		String query = "INSERT INTO EEE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"');";
 		EEEStatement.executeUpdate(query);
-		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in EEE DataBase"+" "+ldt;
-		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
-		EEEStatement.executeUpdate(historytxt);
+		
+		historyEEE.insertEEEhistory(name);
 		
 		System.out.println("*************Detials was inserted successfully!!!*************");
 		System.out.println();
@@ -50,6 +53,7 @@ public class ElectricalandElectronicsEngineering {
 		int choice = in.nextInt();
 		switch (choice) {
 		case 1: {
+			String txt="name";
 			System.out.println("Enter the old name:");
 			in.nextLine();
 			String oldname=in.nextLine();
@@ -61,11 +65,7 @@ public class ElectricalandElectronicsEngineering {
 			String query = "UPDATE EEE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
 			EEEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = "s Detials are updated in EEE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+newName+"'"+"'"+message+"');";
-			EEEStatement.executeUpdate(historytxt);
+			historyEEE.updateEEEhistory(txt, oldname);
 			
 			System.out.println("*************Name was updated successfully!!!*************");
 			System.out.println();
@@ -73,6 +73,8 @@ public class ElectricalandElectronicsEngineering {
 			break;
 		
 		case 2:{
+			
+			String txt="mail";
 			System.out.println("Enter the old email:");
 			in.nextLine();
 			String oldmail=in.nextLine();
@@ -84,16 +86,16 @@ public class ElectricalandElectronicsEngineering {
 			String query = "UPDATE EEE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
 			EEEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = " was updated in EEE DataBase"+" "+ldt;
+			historyEEE.updateEEEhistory(txt, stdName);
 			
-			String historytxt = "INSERT INTO history VALUES ('"+newmail+"'"+"'"+message+"');";
-			EEEStatement.executeUpdate(historytxt);
+			
 			System.out.println("*************email was updated successfully!!!*************");
 			System.out.println();
 		}
 		break;
 		case 3:{
+			
+			String txt="phone";
 			System.out.println("Enter the old phone no:");
 			in.nextLine();
 			String old_no=in.nextLine();
@@ -105,11 +107,7 @@ public class ElectricalandElectronicsEngineering {
 			String query = "UPDATE EEE SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
 			EEEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = " is  updated in EEE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+new_no+"'"+"'"+message+"');";
-			EEEStatement.executeUpdate(historytxt);
+			historyEEE.updateEEEhistory(txt, stdName);
 			
 			System.out.println("*************Phone Number was updated successfully!!!*************");
 			System.out.println();
@@ -128,14 +126,10 @@ public void deleteEEEStudentData() throws SQLException {
 		System.out.println("Enter the Student name to delete:");
 		String name=in.nextLine();
 		
-		String query="DELETE FROM IT WHERE name='"+name+"';";
+		String query="DELETE FROM EEE WHERE name='"+name+"';";
 		EEEStatement.executeUpdate(query);
 		
-		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted in IT DataBase"+" "+ldt;
-		
-		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
-		EEEStatement.executeUpdate(historytxt);
+		historyEEE.deleteEEEhistory(name);
 		
 		System.out.println("*************Data was Deleted successfully!!!*************");
 		System.out.println();
@@ -147,6 +141,11 @@ public void deleteEEEStudentData() throws SQLException {
 		String query ="SELECT * FROM EEE";
 		
 		ResultSet rs = EEEStatement.executeQuery(query);
+		
+		System.out.println("name"
+                +"          "+"email"
+                +"          "+"phoneNo"
+                +"          "+"dept");
 		
 		while (rs.next()){
             System.out.println(rs.getString("name")

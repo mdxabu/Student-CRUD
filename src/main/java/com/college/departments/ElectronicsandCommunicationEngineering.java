@@ -6,7 +6,10 @@ import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
+import javax.swing.event.ListDataEvent;
+
 import com.college.database.DatabaseConnection;
+import com.college.history.DatabaseHistory;
 
 public class ElectronicsandCommunicationEngineering {
 	
@@ -16,11 +19,14 @@ public class ElectronicsandCommunicationEngineering {
 	
 	Statement ECEStatement = dbECE.getConnection();
 	
+	String stdName;
+	DatabaseHistory historyECE = new DatabaseHistory();
+	
 	public void insertECEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
-		
+		this.stdName=name;
 		System.out.println("Enter the email:");
 		String email = in.nextLine();
 		
@@ -31,10 +37,8 @@ public class ElectronicsandCommunicationEngineering {
 		
 		String query = "INSERT INTO ECE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"');";
 		ECEStatement.executeUpdate(query);
-		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in ECE DataBase"+" "+ldt;
-		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
-		ECEStatement.executeUpdate(historytxt);
+		
+		historyECE.insertECEhistory(name);
 		
 		System.out.println("*************Detials was inserted successfully!!!*************");
 		System.out.println();
@@ -50,6 +54,7 @@ public class ElectronicsandCommunicationEngineering {
 		int choice = in.nextInt();
 		switch (choice) {
 		case 1: {
+			String txt="name";
 			System.out.println("Enter the old name:");
 			in.nextLine();
 			String oldname=in.nextLine();
@@ -61,11 +66,7 @@ public class ElectronicsandCommunicationEngineering {
 			String query = "UPDATE ECE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
 			ECEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = "s Detials are updated in ECE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+newName+"'"+"'"+message+"');";
-			ECEStatement.executeUpdate(historytxt);
+			historyECE.updateECEhistory(txt, oldname);
 			
 			System.out.println("*************Name was updated successfully!!!*************");
 			System.out.println();
@@ -73,6 +74,7 @@ public class ElectronicsandCommunicationEngineering {
 			break;
 		
 		case 2:{
+			String txt = "mail";
 			System.out.println("Enter the old email:");
 			in.nextLine();
 			String oldmail=in.nextLine();
@@ -84,16 +86,14 @@ public class ElectronicsandCommunicationEngineering {
 			String query = "UPDATE ECE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
 			ECEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = " was updated in ECE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+newmail+"'"+"'"+message+"');";
-			ECEStatement.executeUpdate(historytxt);
+			historyECE.updateECEhistory(txt, stdName);
 			System.out.println("*************email was updated successfully!!!*************");
 			System.out.println();
 		}
 		break;
 		case 3:{
+			
+			String txt="phone";
 			System.out.println("Enter the old phone no:");
 			in.nextLine();
 			String old_no=in.nextLine();
@@ -105,11 +105,7 @@ public class ElectronicsandCommunicationEngineering {
 			String query = "UPDATE ECE SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
 			ECEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = " is  updated in ECE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+new_no+"'"+"'"+message+"');";
-			ECEStatement.executeUpdate(historytxt);
+			historyECE.updateECEhistory(txt, stdName);
 			
 			System.out.println("*************Phone Number was updated successfully!!!*************");
 			System.out.println();
@@ -130,11 +126,7 @@ public void deleteECEStudentData() throws SQLException {
 		String query="DELETE FROM ECE WHERE name='"+name+"';";
 		ECEStatement.executeUpdate(query);
 		
-		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted in ECE DataBase"+" "+ldt;
-		
-		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
-		ECEStatement.executeUpdate(historytxt);
+		historyECE.deleteECEhistory(name);
 		
 		System.out.println("*************Data was Deleted successfully!!!*************");
 		System.out.println();
@@ -146,6 +138,11 @@ public void deleteECEStudentData() throws SQLException {
 		String query ="SELECT * FROM ECE";
 		
 		ResultSet rs = ECEStatement.executeQuery(query);
+		
+		System.out.println("name"
+                +"          "+"email"
+                +"          "+"phoneNo"
+                +"          "+"dept");
 		
 		while (rs.next()){
             System.out.println(rs.getString("name")

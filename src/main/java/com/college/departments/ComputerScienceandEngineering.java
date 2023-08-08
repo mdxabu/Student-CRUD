@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 import com.college.database.DatabaseConnection;
+import com.college.history.DatabaseHistory;
 
 public class ComputerScienceandEngineering {
 	
@@ -16,11 +17,15 @@ public class ComputerScienceandEngineering {
 	
 	Statement CSEStatement = dbCSE.getConnection();
 	
+	DatabaseHistory historyCSE = new DatabaseHistory();
+	
+	String stdName;
+	
 	public void insertCSEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
-		
+		this.stdName=name;
 		System.out.println("Enter the email:");
 		String email = in.nextLine();
 		
@@ -31,10 +36,8 @@ public class ComputerScienceandEngineering {
 		
 		String query = "INSERT INTO CSE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"');";
 		CSEStatement.executeUpdate(query);
-		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in CSE DataBase"+" "+ldt;
-		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
-		CSEStatement.executeUpdate(historytxt);
+		
+		historyCSE.insertCSEhistory(name);
 		
 		System.out.println("*************Detials was inserted successfully!!!*************");
 		System.out.println();
@@ -52,6 +55,7 @@ public class ComputerScienceandEngineering {
 		int choice = in.nextInt();
 		switch (choice) {
 		case 1: {
+			String txt= "name";
 			System.out.println("Enter the old name:");
 			in.nextLine();
 			String oldname=in.nextLine();
@@ -63,11 +67,9 @@ public class ComputerScienceandEngineering {
 			String query = "UPDATE CSE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
 			CSEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = "s Detials are updated in CSE DataBase"+" "+ldt;
 			
-			String historytxt = "INSERT INTO history VALUES ('"+newName+"'"+"'"+message+"');";
-			CSEStatement.executeUpdate(historytxt);
+			
+			historyCSE.updateCSEhistory(txt, oldname);
 			
 			System.out.println("*************Name was updated successfully!!!*************");
 			System.out.println();
@@ -75,6 +77,8 @@ public class ComputerScienceandEngineering {
 			break;
 		
 		case 2:{
+			
+			String txt="mail";
 			System.out.println("Enter the old email:");
 			in.nextLine();
 			String oldmail=in.nextLine();
@@ -86,16 +90,13 @@ public class ComputerScienceandEngineering {
 			String query = "UPDATE CSE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
 			CSEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = " was updated in CSE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+newmail+"'"+"'"+message+"');";
-			CSEStatement.executeUpdate(historytxt);
+			historyCSE.updateCSEhistory(txt, newmail);
 			System.out.println("*************email was updated successfully!!!*************");
 			System.out.println();
 		}
 		break;
 		case 3:{
+			String txt="phone";
 			System.out.println("Enter the old phone no:");
 			in.nextLine();
 			String old_no=in.nextLine();
@@ -107,11 +108,8 @@ public class ComputerScienceandEngineering {
 			String query = "UPDATE CSE SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
 			CSEStatement.executeUpdate(query);
 			
-			LocalDateTime ldt = LocalDateTime.now();
-			String message = " is  updated in CSE DataBase"+" "+ldt;
 			
-			String historytxt = "INSERT INTO history VALUES ('"+new_no+"'"+"'"+message+"');";
-			CSEStatement.executeUpdate(historytxt);
+			historyCSE.updateCSEhistory(txt, stdName);
 			
 			System.out.println("*************Phone Number was updated successfully!!!*************");
 			System.out.println();
@@ -133,11 +131,8 @@ public class ComputerScienceandEngineering {
 		String query="DELETE FROM CSE WHERE name='"+name+"';";
 		CSEStatement.executeUpdate(query);
 		
-		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted in CSE DataBase"+" "+ldt;
 		
-		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
-		CSEStatement.executeUpdate(historytxt);
+		historyCSE.deleteCSEhistory(name);
 		
 		System.out.println("*************Data was Deleted successfully!!!*************");
 		System.out.println();
@@ -149,6 +144,11 @@ public class ComputerScienceandEngineering {
 		String query ="SELECT * FROM CSE";
 		
 		ResultSet rs = CSEStatement.executeQuery(query);
+		
+		System.out.println("name"
+                +"          "+"email"
+                +"          "+"phoneNo"
+                +"          "+"dept");
 		
 		while (rs.next()){
             System.out.println(rs.getString("name")
