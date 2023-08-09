@@ -3,7 +3,6 @@ package com.college.departments;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 import com.college.database.DatabaseConnection;
@@ -13,9 +12,9 @@ public class InformationTechnology {
 	
 	Scanner in = new Scanner(System.in);
 	
-	DatabaseConnection dbIT = new DatabaseConnection();
 	
-	Statement ITStatement = dbIT.getConnection();
+	
+	Statement ITStatement = DatabaseConnection.getConnection();
 	
 	DatabaseHistory histroyIT = new DatabaseHistory();
 	
@@ -138,7 +137,7 @@ public class InformationTechnology {
 
 	public void readITStudentData() throws SQLException {
 		
-		String query ="SELECT * FROM IT";
+		String query ="SELECT * FROM IT ORDER BY name;";
 		
 		ResultSet rs = ITStatement.executeQuery(query);
 		

@@ -15,9 +15,9 @@ public class ElectronicsandCommunicationEngineering {
 	
 	Scanner in = new Scanner(System.in);
 	
-	DatabaseConnection dbECE = new DatabaseConnection();
 	
-	Statement ECEStatement = dbECE.getConnection();
+	
+	Statement ECEStatement = DatabaseConnection.getConnection();
 	
 	String stdName;
 	DatabaseHistory historyECE = new DatabaseHistory();
@@ -135,7 +135,7 @@ public void deleteECEStudentData() throws SQLException {
 
 	public void readECEStudentData() throws SQLException {
 		
-		String query ="SELECT * FROM ECE";
+		String query ="SELECT * FROM ECE ORDER BY name;";
 		
 		ResultSet rs = ECEStatement.executeQuery(query);
 		

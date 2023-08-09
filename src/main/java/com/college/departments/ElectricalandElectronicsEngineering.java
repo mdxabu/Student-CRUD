@@ -13,9 +13,9 @@ public class ElectricalandElectronicsEngineering {
 	
 	Scanner in = new Scanner(System.in);
 	
-	DatabaseConnection dbEEE = new DatabaseConnection();
 	
-	Statement EEEStatement = dbEEE.getConnection();
+	
+	Statement EEEStatement = DatabaseConnection.getConnection();
 	
 	DatabaseHistory historyEEE = new DatabaseHistory();
 	
@@ -138,7 +138,7 @@ public void deleteEEEStudentData() throws SQLException {
 
 	public void readEEEStudentData() throws SQLException {
 		
-		String query ="SELECT * FROM EEE";
+		String query ="SELECT * FROM EEE ORDER BY name;";
 		
 		ResultSet rs = EEEStatement.executeQuery(query);
 		

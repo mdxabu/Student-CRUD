@@ -8,9 +8,9 @@ import com.college.database.DatabaseConnection;
 
 public class DatabaseHistory{
 	
-	DatabaseConnection dbCSE = new DatabaseConnection();
 	
-	Statement history_statement = dbCSE.getConnection();
+	
+	Statement history_statement = DatabaseConnection.getConnection();
 	
 	//  CSE HISTORY STATEMENT BEGINS
 	

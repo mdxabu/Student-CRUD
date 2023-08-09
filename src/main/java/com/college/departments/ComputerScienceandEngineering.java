@@ -13,9 +13,9 @@ public class ComputerScienceandEngineering {
 	
 	Scanner in = new Scanner(System.in);
 	
-	DatabaseConnection dbCSE = new DatabaseConnection();
 	
-	Statement CSEStatement = dbCSE.getConnection();
+	
+	Statement CSEStatement = DatabaseConnection.getConnection();
 	
 	DatabaseHistory historyCSE = new DatabaseHistory();
 	
@@ -141,7 +141,7 @@ public class ComputerScienceandEngineering {
 
 	public void readCSEStudentData() throws SQLException {
 		
-		String query ="SELECT * FROM CSE";
+		String query ="SELECT * FROM CSE ORDER BY name;";
 		
 		ResultSet rs = CSEStatement.executeQuery(query);
 		
