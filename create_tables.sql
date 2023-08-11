@@ -28,3 +28,7 @@ CREATE TABLE ECE(
     phoneNo VARCHAR(10),
     dept VARCHAR(20)
 );
+
+CREATE TABLE history(
+    history VARCHAR(150);
+);
