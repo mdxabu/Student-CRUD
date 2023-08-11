@@ -19,7 +19,8 @@
   CREATE DATABASE college;
   USE college;
   ```
-- And create four tables<br>
+- And create four tables
+  <br>
 ```CSE👇 DEPT```
 
 ```sql
