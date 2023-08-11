@@ -12,12 +12,11 @@
 - we can use Database Statement in all other class with the ```getConnection()```
 - and also database stores all the movements in the ```history``` table with the date and time.
 
-# Note
-- Create the Mysql database in the name of
+# MySQL Database
+## Manually
+- Create the Mysql database by running the following command
 ```sql
   CREATE DATABASE college;
-  ```
- ```sql
   USE college;
   ```
 - And create four tables<br>
@@ -61,9 +60,16 @@ CREATE TABLE ECE(
     dept VARCHAR(20)
 );
 ```
+## Automatically
+Run the following command to your terminal:
+
+```bash
+mysql < create_tables.sql
+```
+
   
 ## To get start with this repo:
-- Fork and Clone this repo ```git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git```
+- Clone this repo ```git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git```
 - Open ```Student-CRUD``` project in your IDE(Intell IJ/Eclipse)
 - Run it.
 
