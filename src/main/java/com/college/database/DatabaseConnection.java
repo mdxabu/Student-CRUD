@@ -20,14 +20,11 @@ public class DatabaseConnection {
 			Connection connection= DriverManager.getConnection(URL,userName,password);
 	        statement = connection.createStatement();
 			
-		} catch (ClassNotFoundException e) {
-			
-			e.printStackTrace();
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
+		} catch (ClassNotFoundException | SQLException e) {
+
+			System.out.println(e.getMessage());
 		}
-		return statement;
+        return statement;
         
 	}
     

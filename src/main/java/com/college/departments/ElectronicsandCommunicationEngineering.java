@@ -52,68 +52,63 @@ public class ElectronicsandCommunicationEngineering {
 		System.out.println("3.Update Phone Number");
 		System.out.println("Enter Your choice:");
 		int choice = in.nextInt();
-		switch (choice) {
-		case 1: {
-			String txt="name";
-			System.out.println("Enter the old name:");
-			in.nextLine();
-			String oldname=in.nextLine();
-			
-			System.out.println("Enter the new name:");
-			
-			String newName = in.nextLine();
-			
-			String query = "UPDATE ECE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
-			ECEStatement.executeUpdate(query);
-			
-			historyECE.updateECEhistory(txt, oldname);
-			
-			System.out.println("*************Name was updated successfully!!!*************");
-			System.out.println();
-		}
-			break;
-		
-		case 2:{
-			String txt = "mail";
-			System.out.println("Enter the old email:");
-			in.nextLine();
-			String oldmail=in.nextLine();
-			
-			System.out.println("Enter the new email:");
-			
-			String newmail = in.nextLine();
-			
-			String query = "UPDATE ECE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
-			ECEStatement.executeUpdate(query);
-			
-			historyECE.updateECEhistory(txt, stdName);
-			System.out.println("*************email was updated successfully!!!*************");
-			System.out.println();
-		}
-		break;
-		case 3:{
-			
-			String txt="phone";
-			System.out.println("Enter the old phone no:");
-			in.nextLine();
-			String old_no=in.nextLine();
-			
-			System.out.println("Enter the new phone no:");
-			
-			String new_no = in.nextLine();
-			
-			String query = "UPDATE ECE SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
-			ECEStatement.executeUpdate(query);
-			
-			historyECE.updateECEhistory(txt, stdName);
-			
-			System.out.println("*************Phone Number was updated successfully!!!*************");
-			System.out.println();
-		}
-		break;
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + choice);
-		}
+        switch (choice) {
+            case 1 -> {
+                String txt = "name";
+                System.out.println("Enter the old name:");
+                in.nextLine();
+                String oldname = in.nextLine();
+
+                System.out.println("Enter the new name:");
+
+                String newName = in.nextLine();
+
+                String query = "UPDATE ECE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
+                ECEStatement.executeUpdate(query);
+
+                historyECE.updateECEhistory(txt, oldname);
+
+                System.out.println("*************Name was updated successfully!!!*************");
+                System.out.println();
+            }
+            case 2 -> {
+                String txt = "mail";
+                System.out.println("Enter the old email:");
+                in.nextLine();
+                String oldmail = in.nextLine();
+
+                System.out.println("Enter the new email:");
+
+                String newmail = in.nextLine();
+
+                String query = "UPDATE ECE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
+                ECEStatement.executeUpdate(query);
+
+                historyECE.updateECEhistory(txt, stdName);
+                System.out.println("*************email was updated successfully!!!*************");
+                System.out.println();
+            }
+            case 3 -> {
+
+                String txt = "phone";
+                System.out.println("Enter the old phone no:");
+                in.nextLine();
+                String old_no = in.nextLine();
+
+                System.out.println("Enter the new phone no:");
+
+                String new_no = in.nextLine();
+
+                String query = "UPDATE ECE SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
+                ECEStatement.executeUpdate(query);
+
+                historyECE.updateECEhistory(txt, stdName);
+
+                System.out.println("*************Phone Number was updated successfully!!!*************");
+                System.out.println();
+            }
+            default -> throw new IllegalArgumentException("Unexpected value: " + choice);
+        }
 		
 		
 	}
