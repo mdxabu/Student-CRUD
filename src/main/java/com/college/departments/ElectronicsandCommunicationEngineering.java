@@ -3,10 +3,7 @@ package com.college.departments;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDateTime;
 import java.util.Scanner;
-
-import javax.swing.event.ListDataEvent;
 
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;

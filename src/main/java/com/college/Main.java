@@ -3,6 +3,7 @@ package com.college;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import com.college.database.DatabaseConnection;
 import com.college.departments.ComputerScienceandEngineering;
 import com.college.departments.ElectricalandElectronicsEngineering;
 import com.college.departments.ElectronicsandCommunicationEngineering;
@@ -13,9 +14,9 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
     	
-
-
-
+    	
+    	
+    	new DatabaseConnection();
 
     	while(true) {
     		System.out.println();
