@@ -28,7 +28,8 @@ CREATE TABLE CSE(
     name VARCHAR(20),
     email VARCHAR(50),
     phoneNo VARCHAR(10),
-    dept VARCHAR(20)
+    dept VARCHAR(20),
+    UNIQUE(email,phoneNo)
 );
 ```
 ```IT👇 DEPT```
@@ -38,7 +39,8 @@ CREATE TABLE IT(
     name VARCHAR(20),
     email VARCHAR(50),
     phoneNo VARCHAR(10),
-    dept VARCHAR(20)
+    dept VARCHAR(20),
+    UNIQUE(email,phoneNo)
 );
 ```
 ```EEE👇 DEPT```
@@ -48,7 +50,8 @@ CREATE TABLE EEE(
     name VARCHAR(20),
     email VARCHAR(50),
     phoneNo VARCHAR(10),
-    dept VARCHAR(20)
+    dept VARCHAR(20),
+    UNIQUE(email,phoneNo)
 );
 ```
 ```ECE👇 DEPT```
@@ -58,7 +61,8 @@ CREATE TABLE ECE(
     name VARCHAR(20),
     email VARCHAR(50),
     phoneNo VARCHAR(10),
-    dept VARCHAR(20)
+    dept VARCHAR(20),
+    UNIQUE(email,phoneNo)
 );
 ```
 ## Automatically
