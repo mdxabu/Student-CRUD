@@ -94,7 +94,7 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 
 - Create a new branch for your feature or bug fix:
 ```bash
-  git checkout -b feature/your-feature-name
+  git checkout -b test
 ```
 - Make your changes and commit them with descriptive commit messages.
 
