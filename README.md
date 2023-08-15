@@ -29,7 +29,8 @@ CREATE TABLE CSE(
     email VARCHAR(50),
     phoneNo VARCHAR(10),
     dept VARCHAR(20),
-    UNIQUE(email,phoneNo)
+    dob year,
+    Academic_Year INT
 );
 ```
 ```IT👇 DEPT```
@@ -40,7 +41,8 @@ CREATE TABLE IT(
     email VARCHAR(50),
     phoneNo VARCHAR(10),
     dept VARCHAR(20),
-    UNIQUE(email,phoneNo)
+    dob year,
+    Academic_Year INT
 );
 ```
 ```EEE👇 DEPT```
@@ -51,7 +53,8 @@ CREATE TABLE EEE(
     email VARCHAR(50),
     phoneNo VARCHAR(10),
     dept VARCHAR(20),
-    UNIQUE(email,phoneNo)
+    dob year,
+    Academic_Year INT
 );
 ```
 ```ECE👇 DEPT```
@@ -62,7 +65,8 @@ CREATE TABLE ECE(
     email VARCHAR(50),
     phoneNo VARCHAR(10),
     dept VARCHAR(20),
-    UNIQUE(email,phoneNo)
+    dob year,
+    Academic_Year INT
 );
 ```
 ## Automatically
