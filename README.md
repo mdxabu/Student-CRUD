@@ -91,6 +91,11 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 ```bash
   git checkout -b feature/your-feature-name
 ```
+- Make your changes and commit them with descriptive commit messages.
+
+- Push your changes to your forked repository.
+
+- Create a pull request against the main branch of this repository, describing your changes and the problem or feature you're addressing.
 
 
 
