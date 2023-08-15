@@ -32,12 +32,6 @@ public class DatabaseConnection {
 	}
 
 
-
-
-
-
-
-
 	public static Statement getConnection() {
 		Statement statement = null;
 		try {

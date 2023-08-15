@@ -112,7 +112,10 @@ public class Main {
                         case 4 -> ECE_obj.readECEStudentData();
                     }
                 }
-                case 5 -> System.exit(0);
+                case 5 -> {
+                    System.err.println("Thanks for using this project😊!!!");
+                    System.exit(0);
+                }
                 default -> System.err.println("please check the choice!!!");
             }
 

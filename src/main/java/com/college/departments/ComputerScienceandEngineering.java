@@ -2,6 +2,7 @@ package com.college.departments;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -32,11 +33,23 @@ public class ComputerScienceandEngineering {
 		
 		System.out.println("Enter the Student Phone Number:");
 		String phoneNo = in.nextLine();
+
+        System.out.println("Enter your Year of birth [Ex:xxxx] :");
+        int dob = in.nextInt();
+
+        System.out.println("Enter your Academic year in College [Ex:1,2,3,4] :");
+        int Academic_Year = in.nextInt();
+        try {
+            String query = "INSERT INTO CSE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"',"+dob+","+Academic_Year+");";
+            CSEStatement.executeUpdate(query);
+
+            historyCSE.insertCSEhistory(name);
+        }
+        catch (SQLIntegrityConstraintViolationException e){
+            System.err.println("Duplicate Key are not allowed!!!");
+        }
 		
-		String query = "INSERT INTO CSE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"');";
-		CSEStatement.executeUpdate(query);
-		
-		historyCSE.insertCSEhistory(name);
+
 		
 		System.out.println("*************Detials was inserted successfully!!!*************");
 		System.out.println();
@@ -147,7 +160,10 @@ public class ComputerScienceandEngineering {
             System.out.println(rs.getString("name")
                     +"          "+rs.getString("email")
                     +"          "+rs.getString("phoneNo")
-                    +"          "+rs.getString("dept"));
+                    +"          "+rs.getString("dept")
+                    +"          "+rs.getInt("dob")
+                    +"          "+rs.getInt("Academic_Year"));
+
         }
 		
 	}
