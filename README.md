@@ -97,6 +97,11 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 
 - Create a pull request against the main branch of this repository, describing your changes and the problem or feature you're addressing.
 
+# License
+This project is licensed under the MIT License, which means you are free to use, modify, and distribute it as you see fit. Please refer to the LICENSE file for more details.
+
+
+
 
 
 
