@@ -5,13 +5,11 @@ Welcome to the Student-CRUD repository! This repository contains a simple applic
 
 ![CRUD-drawing](https://github.com/f-mohamed-abdullah/Student-CRUD/assets/115330277/e93b9407-06a5-473f-b4f0-ec91681d0fe0)
 
-# overview
-- ```main.java``` is the Main Class of all class
-- we've seperate class for the departments and database tables too.
-- ```ComputerScienceandEngineering.java``` ```InformationTechnology.java``` ```ElectricalandElectronicsEngineering.java``` ```ElectronicsandCommunicationEngineering.java``` these are the seperate classes.
-- Database class also available with all connection and statement ```DatabaseConnection.java```
-- we can use Database Statement in all other class with the ```getConnection()```
-- and also database stores all the movements in the ```history``` table with the date and time.
+# Features
+- Create: Add new student records to the database, including details like name, age, gender, and contact information.
+- Read: View a list of all student records with relevant details.
+- Update: Edit existing student records to reflect any changes in their information.
+- Delete: Remove student records from the database when they are no longer needed.
 
 # MySQL Database
 ## Manually
@@ -74,10 +72,26 @@ mysql < create_tables.sql
 ```
 
   
-## To get start with this repo:
-- Clone this repo ```git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git```
-- Open ```Student-CRUD``` project in your IDE(Intell IJ/Eclipse)
-- Run it.
+# Getting Started
+## Installation
+- Clone the repository:
+```bash
+git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git
+```
+- Navigate to the project directory:
+```bash
+cd Student-CRUD
+```
+# Contributing
+Contributions to this repository are welcome. If you find a bug, have a feature request, or want to contribute in any other way, please follow these steps:
+
+- Fork the repository.
+
+- Create a new branch for your feature or bug fix:
+```bash
+  git checkout -b feature/your-feature-name
+```
+
 
 
 
