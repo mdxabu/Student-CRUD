@@ -98,7 +98,7 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 - Create a pull request against the main branch of this repository, describing your changes and the problem or feature you're addressing.
 
 # License
-This project is licensed under the MIT License, which means you are free to use, modify, and distribute it as you see fit. Please refer to the LICENSE file for more details.
+This project is licensed under the <a href="https://en.wikipedia.org//wiki/MIT_License">MIT License</a>, which means you are free to use, modify, and distribute it as you see fit. Please refer to the <a href="https://github.com/f-mohamed-abdullah/Student-CRUD/blob/main/LICENSE">LICENSE</a> file for more details.
 
 
 
