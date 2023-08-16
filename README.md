@@ -92,7 +92,7 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 
 - Fork the repository.
 
-- Create a new branch for your feature or bug fix:
+- Create a new branch for your feature or bug fix or you can work on main branch too:
 ```bash
   git checkout -b test
 ```
@@ -100,7 +100,7 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 
 - Push your changes to your forked repository.
 
-- Create a pull request against the main branch of this repository, describing your changes and the problem or feature you're addressing.
+- Create a PR against the main branch of this repository, describing your changes and the problem or feature you're addressing.
 
 # License
 This project is licensed under the <a href="https://en.wikipedia.org//wiki/MIT_License">MIT License</a>, which means you are free to use, modify, and distribute it as you see fit. Please refer to the <a href="https://github.com/f-mohamed-abdullah/Student-CRUD/blob/main/LICENSE">LICENSE</a> file for more details.
