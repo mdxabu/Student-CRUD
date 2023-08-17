@@ -26,8 +26,8 @@ Welcome to the Student-CRUD repository! This repository contains a simple applic
 ```sql
 CREATE TABLE CSE(
     name VARCHAR(20),
-    email VARCHAR(50),
-    phoneNo VARCHAR(10),
+    email VARCHAR(50) UNIQUE,
+    phoneNo VARCHAR(10) UNIQUE,
     dept VARCHAR(20),
     dob year,
     Academic_Year INT
@@ -38,8 +38,8 @@ CREATE TABLE CSE(
 ```sql
 CREATE TABLE IT(
     name VARCHAR(20),
-    email VARCHAR(50),
-    phoneNo VARCHAR(10),
+    email VARCHAR(50) UNIQUE,
+    phoneNo VARCHAR(10) UNIQUE,
     dept VARCHAR(20),
     dob year,
     Academic_Year INT
@@ -50,8 +50,8 @@ CREATE TABLE IT(
 ```sql
 CREATE TABLE EEE(
     name VARCHAR(20),
-    email VARCHAR(50),
-    phoneNo VARCHAR(10),
+    email VARCHAR(50) UNIQUE,
+    phoneNo VARCHAR(10) UNIQUE,
     dept VARCHAR(20),
     dob year,
     Academic_Year INT
@@ -62,8 +62,8 @@ CREATE TABLE EEE(
 ```sql
 CREATE TABLE ECE(
     name VARCHAR(20),
-    email VARCHAR(50),
-    phoneNo VARCHAR(10),
+    email VARCHAR(50) UNIQUE,
+    phoneNo VARCHAR(10) UNIQUE,
     dept VARCHAR(20),
     dob year,
     Academic_Year INT
