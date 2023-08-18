@@ -79,6 +79,7 @@ mysql < create_tables.sql
   
 # Getting Started
 ## Installation
+- Fork this repository
 - Clone the repository:
 ```bash
 git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git
