@@ -1,8 +1,5 @@
 package com.college.database;
 
-import io.github.cdimascio.dotenv.Dotenv;
-
-import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,11 +17,12 @@ public class DatabaseConnection {
 	static String password;
 
 	public DatabaseConnection(){
-
-		DatabaseConnection.user = "root";
-		DatabaseConnection.password = "@bdul1ah";
-		System.out.println(user);
-		System.out.println(password);
+		
+		System.out.println("Enter the Mysql Connection username:");// like: root (or) anything
+		DatabaseConnection.user = in.nextLine();
+		System.out.println("Enter the Mysql Connection password:");// your password
+		DatabaseConnection.password = in.nextLine();
+		
 	}
 
 
