@@ -9,19 +9,24 @@ import java.util.Scanner;
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;
 
+import static com.college.database.DatabaseConnection.getConnection;
+
 public class ComputerScienceandEngineering {
 	
 	Scanner in = new Scanner(System.in);
 	
-	
-	
+
 	Statement CSEStatement = DatabaseConnection.getConnection();
 	
 	DatabaseHistory historyCSE = new DatabaseHistory();
 	
 	String stdName;
-	
-	public void insertCSEStudentData() throws SQLException {
+
+    public ComputerScienceandEngineering() throws SQLException, ClassNotFoundException {
+    }
+
+
+    public void insertCSEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
@@ -145,16 +150,18 @@ public class ComputerScienceandEngineering {
 		
 	}
 
-	public void readCSEStudentData() throws SQLException {
+	public void readCSEStudentData() throws Exception {
 		
 		String query ="SELECT * FROM CSE ORDER BY name;";
 		
 		ResultSet rs = CSEStatement.executeQuery(query);
 		
-		System.out.println("name"
-                +"          "+"email"
-                +"          "+"phoneNo"
-                +"          "+"dept");
+		System.out.println("NAME"
+                +"                    "+"EMAIL"
+                +"                    "+"PHONE NUMBER"
+                +"                    "+"DEPT"
+                +"                    "+"DOB"
+                +"                    "+"ACADEMIC YEAR");
 		
 		while (rs.next()){
             System.out.println(rs.getString("name")

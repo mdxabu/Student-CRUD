@@ -11,8 +11,11 @@ public class DatabaseHistory{
 	
 	
 	Statement history_statement = DatabaseConnection.getConnection();
-	
-	//  CSE HISTORY STATEMENT BEGINS
+
+    public DatabaseHistory() throws SQLException, ClassNotFoundException {
+    }
+
+    //  CSE HISTORY STATEMENT BEGINS
 	
 	public void insertCSEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();

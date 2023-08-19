@@ -1,49 +1,42 @@
 package com.college.database;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
+import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+
+
 public class DatabaseConnection {
 	static Scanner in = new Scanner(System.in);
 	
 	static String URL = "jdbc:mysql://localhost:3306/college";
     
-	private static String userName;
-	
-	private static String password;
-	
-	
-	
-	
-    
-	
-	
+	static String user;
+	static String password;
+
 	public DatabaseConnection(){
-		System.out.println("Enter your Connection username:");
-        DatabaseConnection.userName=in.nextLine();
-        
-        System.out.println("Enter your connection password:");
-		DatabaseConnection.password=in.nextLine();
-		
-		
+
+		DatabaseConnection.user = "root";
+		DatabaseConnection.password = "@bdul1ah";
+		System.out.println(user);
+		System.out.println(password);
 	}
 
 
-	public static Statement getConnection() {
-		Statement statement = null;
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection connection= DriverManager.getConnection(URL,userName,password);
-	        statement = connection.createStatement();
-			
-		} catch (ClassNotFoundException | SQLException e) {
+	public static Statement getConnection() throws ClassNotFoundException, SQLException {
 
-			System.out.println(e.getMessage());
-		}
-        return statement;
+
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Statement statement;
+		Connection connection = DriverManager.getConnection(URL, user, password);
+		statement = connection.createStatement();
+
+		return statement;
         
 	}
     

@@ -9,6 +9,8 @@ import java.util.Scanner;
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;
 
+import static com.college.database.DatabaseConnection.getConnection;
+
 public class InformationTechnology {
 	
 	Scanner in = new Scanner(System.in);
@@ -20,8 +22,11 @@ public class InformationTechnology {
 	DatabaseHistory histroyIT = new DatabaseHistory();
 	
 	String stdName;
-	
-	public void insertITStudentData() throws SQLException {
+
+    public InformationTechnology() throws SQLException, ClassNotFoundException {
+    }
+
+    public void insertITStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
@@ -145,11 +150,13 @@ public class InformationTechnology {
 		String query ="SELECT * FROM IT ORDER BY name;";
 		
 		ResultSet rs = ITStatement.executeQuery(query);
-		
-		System.out.println("name"
-                +"          "+"email"
-                +"          "+"phoneNo"
-                +"          "+"dept");
+
+        System.out.println("NAME"
+                +"                    "+"EMAIL"
+                +"                    "+"PHONE NUMBER"
+                +"                    "+"DEPT"
+                +"                    "+"DOB"
+                +"                    "+"ACADEMIC YEAR");
 		
 		while (rs.next()){
             System.out.println(rs.getString("name")

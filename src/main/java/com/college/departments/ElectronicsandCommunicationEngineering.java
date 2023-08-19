@@ -9,6 +9,8 @@ import java.util.Scanner;
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;
 
+import static com.college.database.DatabaseConnection.getConnection;
+
 public class ElectronicsandCommunicationEngineering {
 	
 	Scanner in = new Scanner(System.in);
@@ -19,8 +21,11 @@ public class ElectronicsandCommunicationEngineering {
 	
 	String stdName;
 	DatabaseHistory historyECE = new DatabaseHistory();
-	
-	public void insertECEStudentData() throws SQLException {
+
+    public ElectronicsandCommunicationEngineering() throws SQLException, ClassNotFoundException {
+    }
+
+    public void insertECEStudentData() throws SQLException {
 
         System.out.println("Enter the Student Name:");
         String name = in.nextLine();
@@ -141,11 +146,13 @@ public void deleteECEStudentData() throws SQLException {
 		String query ="SELECT * FROM ECE ORDER BY name;";
 		
 		ResultSet rs = ECEStatement.executeQuery(query);
-		
-		System.out.println("name"
-                +"          "+"email"
-                +"          "+"phoneNo"
-                +"          "+"dept");
+
+        System.out.println("NAME"
+                +"                    "+"EMAIL"
+                +"                    "+"PHONE NUMBER"
+                +"                    "+"DEPT"
+                +"                    "+"DOB"
+                +"                    "+"ACADEMIC YEAR");
 		
 		while (rs.next()){
             System.out.println(rs.getString("name")
