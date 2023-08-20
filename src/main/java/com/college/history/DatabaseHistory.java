@@ -1,3 +1,14 @@
+/*
+ * This Class is Mainly used for Saving all the detials from the departments
+ * It can save the Inserted Data,Upadated data & Deleted Data
+ * It stores with Local time and Date
+ */
+
+
+
+
+
+
 package com.college.history;
 
 import java.sql.SQLException;

@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class DatabaseConnection {
 	static Scanner in = new Scanner(System.in);
 	
+	//Mysql Database Connection URL
 	static String URL = "jdbc:mysql://localhost:3306/college";
     
 	static String user;
@@ -25,6 +26,11 @@ public class DatabaseConnection {
 		
 	}
 
+
+	/*
+	 * This nethod is used for getconnection to the mysql database
+	 * This function return the Statement type
+	 * */
 
 	public static Statement getConnection() throws ClassNotFoundException, SQLException {
 

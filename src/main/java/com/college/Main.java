@@ -20,8 +20,9 @@ public class Main {
 
 
 
-
+    	// Just Calling the DatabaseConnection class constructor without creatring an reference
         new DatabaseConnection();
+        
     	while(true) {
     		System.out.println();
     		
