@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 
 
 public class DatabaseConnection {
@@ -19,10 +21,15 @@ public class DatabaseConnection {
 
 	public DatabaseConnection(){
 		
-		System.out.println("Enter the Mysql Connection username:");// like: root (or) anything
-		DatabaseConnection.user = in.nextLine();
-		System.out.println("Enter the Mysql Connection password:");// your password
-		DatabaseConnection.password = in.nextLine();
+
+		
+		Dotenv getenvirnmentalVariables = Dotenv.configure().load();
+		
+		// get the Environmental value using Key(USERNAME)
+		DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
+		
+		// get the Environmental value using Key(PASSWORD)
+		DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 		
 	}
 
