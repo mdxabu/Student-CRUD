@@ -56,7 +56,7 @@ public class DatabaseHistory{
 			history_statement.executeUpdate(historytxt);
 		}
 		else if (txt=="name") {
-			String message = " updated the Name in CSE DataBase"+" "+ldt;
+			String message = " updated the Name to "+""+" in CSE DataBase"+" "+ldt;
 			
 			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
 			history_statement.executeUpdate(historytxt);

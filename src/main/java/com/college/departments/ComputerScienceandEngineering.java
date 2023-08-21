@@ -22,10 +22,12 @@ public class ComputerScienceandEngineering {
 	
 	String stdName;
 
+	// It's an default constructor 
     public ComputerScienceandEngineering() throws SQLException, ClassNotFoundException {
     }
 
 
+    // it is an insert method for CSE Student
     public void insertCSEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student Name:");
@@ -63,6 +65,7 @@ public class ComputerScienceandEngineering {
 		
 	}
 
+    // It is an method for update detials of CSE Students
 	public void updateCSEStudentData() throws SQLException {
 		
 		System.out.println("1.update Name");
@@ -134,6 +137,7 @@ public class ComputerScienceandEngineering {
 		
 	}
 
+	//It is an method to delete the deltials of student form CSE
 	public void deleteCSEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student name to delete:");
@@ -150,6 +154,8 @@ public class ComputerScienceandEngineering {
 		
 	}
 
+	
+	// it is an method to read data from the CSE Database
 	public void readCSEStudentData() throws Exception {
 		
 		String query ="SELECT * FROM CSE ORDER BY name;";
