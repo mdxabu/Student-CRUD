@@ -11,7 +11,7 @@ Welcome to the Student-CRUD repository! This repository contains a simple applic
 - Update: Edit existing student records to reflect any changes in their information.
 - Delete: Remove student records from the database when they are no longer needed.
 # Create an ```.env``` file
-  for storing Mysql Databse credentials
+  For storing Mysql Database credentials
   ```.env
   USERNAME=your_mysql_username
   PASSWORD=your_mysql_password
