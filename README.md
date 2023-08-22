@@ -17,6 +17,7 @@ Welcome to the Student-CRUD repository! This repository contains a simple applic
   PASSWORD=your_mysql_password
 ```
 # How to access the ```.env``` file variables:
+  These statements are used to access the value in the ```.env``` file
 ```java
 Dotenv getenvirnmentalVariables = Dotenv.configure().load();
 
@@ -26,7 +27,6 @@ DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
 // get the Environmental value using Key(PASSWORD)
 DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 ```
-- These statements are used to access the value in the ```.env``` file
 # MySQL Database
 ## Manually
 - Create the Mysql database by running the following command
