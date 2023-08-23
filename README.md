@@ -27,6 +27,16 @@ DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
 // get the Environmental value using Key(PASSWORD)
 DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 ```
+# Dependency for Mysql Connector Java
+```xml
+<dependency>
+  <groupId>mysql</groupId>
+  <artifactId>mysql-connector-java</artifactId>
+  <version>8.0.33</version>
+</dependency>
+```
+# Tables 
+```
 # MySQL Database
 ## Manually
 - Create the Mysql database by running the following command
