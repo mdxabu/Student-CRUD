@@ -91,6 +91,7 @@ fabric.properties
 !.idea/codeStyles
 !.idea/runConfigurations
 
+# This is the environmental variable file for storing database credentials
 .env
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all
 
