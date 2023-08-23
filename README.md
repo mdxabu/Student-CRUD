@@ -35,8 +35,8 @@ DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
   <version>8.0.33</version>
 </dependency>
 ```
-# Tables 
-```
+
+
 # MySQL Database
 ## Manually
 - Create the Mysql database by running the following command
