@@ -16,6 +16,14 @@ Welcome to the Student-CRUD repository! This repository contains a simple applic
   USERNAME=your_mysql_username
   PASSWORD=your_mysql_password
 ```
+# Depenedency for Dotenv-java
+```xml
+<dependency>
+    <groupId>io.github.cdimascio</groupId>
+    <artifactId>dotenv-java</artifactId>
+    <version>3.0.0</version>
+</dependency>
+```
 # How to access the ```.env``` file variables:
   These statements are used to access the value in the ```.env``` file
 ```java
