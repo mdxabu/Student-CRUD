@@ -30,7 +30,7 @@ public class DatabaseHistory{
 	
 	public void insertCSEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in CSE DataBase"+" "+ldt;
+		String message = "s Detials inserted in CSE DataBase"+" "+ldt;
 		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
@@ -44,32 +44,7 @@ public class DatabaseHistory{
 	}
 	
 	
-	public void updateCSEhistory(String txt,String name) throws SQLException {
-		
-		LocalDateTime ldt = LocalDateTime.now();
-		
-		if(txt=="mail") {
-			
-			String message = " is the updated  email in CSE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		else if (txt=="name") {
-			String message = " updated the Name to "+""+" in CSE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-			
-		}
-		else if (txt=="phone") {
-			String message = " is  updated the Phone Number in CSE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		
-	}
+	
 	
 	// CSE HISTORY STATEMENTS ENDS
 	
@@ -79,7 +54,7 @@ public class DatabaseHistory{
 	
 	public void insertIThistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in IT DataBase"+" "+ldt;
+		String message = "s Detials inserted in IT DataBase"+" "+ldt;
 		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
@@ -92,32 +67,7 @@ public class DatabaseHistory{
 		history_statement.executeUpdate(historytxt);
 	}
 	
-	public void updateIThistory(String txt,String name) throws SQLException {
-		
-		LocalDateTime ldt = LocalDateTime.now();
-		
-		if(txt=="mail") {
-			
-			String message = " is the updated email in IT DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		else if (txt=="name") {
-			String message = " updated the Name from IT DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-			
-		}
-		else if (txt=="phone") {
-			String message = " updated the Phone Number from IT DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		
-	}
+	
 	
 	// IT HISTORY STATEMENT ENDS
 	
@@ -125,37 +75,12 @@ public class DatabaseHistory{
 	
 	public void insertEEEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in EEE DataBase"+" "+ldt;
+		String message = "s Detials inserted in EEE DataBase"+" "+ldt;
 		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
 	
-	public void updateEEEhistory(String txt,String name) throws SQLException {
-		
-		LocalDateTime ldt = LocalDateTime.now();
-		
-		if(txt=="mail") {
-			
-			String message = " is the updated  email in EEE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		else if (txt=="name") {
-			String message = " updated the Name from EEE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-			
-		}
-		else if (txt=="phone") {
-			String message = " updated the Phone Number in EEE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		
-	}
+	
 	
 	public void deleteEEEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
@@ -175,37 +100,12 @@ public class DatabaseHistory{
 	
 	public void insertECEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = "s Detials are inserted in ECE DataBase"+" "+ldt;
+		String message = "s Detials inserted in ECE DataBase"+" "+ldt;
 		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
 	
-	public void updateECEhistory(String txt,String name) throws SQLException {
-		
-		LocalDateTime ldt = LocalDateTime.now();
-		
-		if(txt=="mail") {
-			
-			String message = " is the updated email in ECE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		else if (txt=="name") {
-			String message = " updated the Name from ECE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-			
-		}
-		else if (txt=="phone") {
-			String message = " updated the Phone Number in ECE DataBase"+" "+ldt;
-			
-			String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
-			history_statement.executeUpdate(historytxt);
-		}
-		
-	}
+	
 	
 	
 	public void deleteECEhistory(String name) throws SQLException {
@@ -217,6 +117,45 @@ public class DatabaseHistory{
 	}
 	
 	// ECE HISTORY STATEMENTS ENDS
+	
+	
+	
+	
+public void updateNamehistory(String dept,String oldName,String newName) throws SQLException {
+		
+			LocalDateTime ldt = LocalDateTime.now();
+		
+			String message = oldName+" updated his name to "+newName+" from "+dept+" DataBase"+" "+ldt;
+			
+			String historytxt = "INSERT INTO history VALUES ('"+message+"');";
+			history_statement.executeUpdate(historytxt);
+			
+	}
+
+public void updateMailhistory(String dept,String oldMail,String newMail) throws SQLException {
+	
+	LocalDateTime ldt = LocalDateTime.now();
+	
+	
+	
+	String message = oldMail+" Mail ID was updated to "+newMail+" Mail ID in "+dept+" DataBase"+" "+ldt;
+	
+	String historytxt = "INSERT INTO history VALUES ('"+message+"');";
+	history_statement.executeUpdate(historytxt);
+}
+
+public void updatePhonehistory(String dept,String oldNo, String newNo) throws SQLException {
+	
+	LocalDateTime ldt = LocalDateTime.now();
+	
+	String message = oldNo+" was updated to "+newNo+" Phone Number in "+dept+" DataBase"+" "+ldt;
+	
+	String historytxt = "INSERT INTO history VALUES ('"+message+"');";
+	history_statement.executeUpdate(historytxt);
+}
+
+
+
 	
 	
 

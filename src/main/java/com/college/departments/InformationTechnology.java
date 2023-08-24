@@ -9,8 +9,6 @@ import java.util.Scanner;
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;
 
-import static com.college.database.DatabaseConnection.getConnection;
-
 public class InformationTechnology {
 	
 	Scanner in = new Scanner(System.in);
@@ -28,6 +26,7 @@ public class InformationTechnology {
 
     public void insertITStudentData() throws SQLException {
 		
+    	try {
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
 		this.stdName=name;
@@ -45,22 +44,26 @@ public class InformationTechnology {
 
         System.out.println("Enter your Academic year in College [Ex:1,2,3,4] :");
         int Academic_Year = in.nextInt();
-        try {
+        
             String query = "INSERT INTO IT VALUES('" + name + "','" + email + "','" + phoneNo + "','" + dept + "'," + dob + "," + Academic_Year + ");";
             ITStatement.executeUpdate(query);
 
             histroyIT.insertIThistory(name);
+            
+            System.out.println();
+            System.out.println("*************Detials was inserted successfully!!!*************");
+    		System.out.println();
         }
         catch (SQLIntegrityConstraintViolationException e){
             System.err.println("Duplicate Key are not allowed!!!");
         }
-		System.out.println("*************Detials was inserted successfully!!!*************");
-		System.out.println();
+		
 		
 		}
 	
 	public void updateITStudentData() throws SQLException {
 		
+		final String Dept = "IT";
 		System.out.println("1.update Name");
 		System.out.println("2.Update email");
 		System.out.println("3.Update Phone Number");
@@ -69,7 +72,7 @@ public class InformationTechnology {
         switch (choice) {
             case 1 -> {
 
-                String txt = "name";
+               
                 System.out.println("Enter the old name:");
                 in.nextLine();
                 String oldname = in.nextLine();
@@ -81,14 +84,15 @@ public class InformationTechnology {
                 String query = "UPDATE IT SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
                 ITStatement.executeUpdate(query);
 
-                histroyIT.updateIThistory(txt, oldname);
+                histroyIT.updateNamehistory(Dept, oldname, newName);
 
+                System.out.println();
                 System.out.println("*************Name was updated successfully!!!*************");
                 System.out.println();
             }
             case 2 -> {
-
-                String txt = "mail";
+            		
+            	try {
                 System.out.println("Enter the old email:");
                 in.nextLine();
                 String oldmail = in.nextLine();
@@ -100,13 +104,19 @@ public class InformationTechnology {
                 String query = "UPDATE IT SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
                 ITStatement.executeUpdate(query);
 
-                histroyIT.updateIThistory(txt, stdName);
+                histroyIT.updateMailhistory(Dept, oldmail, newmail);
 
-                System.out.println("*************email was updated successfully!!!*************");
                 System.out.println();
+                System.out.println("*************Email was updated successfully!!!*************");
+                System.out.println();
+            	}
+            	catch (Exception e) {
+					System.err.println("This Email is already Exist !!!");
+				}
             }
             case 3 -> {
-                String txt = "phone";
+                
+            	
                 System.out.println("Enter the old phone no:");
                 in.nextLine();
                 String old_no = in.nextLine();
@@ -118,8 +128,9 @@ public class InformationTechnology {
                 String query = "UPDATE IT SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
                 ITStatement.executeUpdate(query);
 
-                histroyIT.updateIThistory(txt, stdName);
+                histroyIT.updatePhonehistory(Dept, old_no, new_no);
 
+                System.out.println();
                 System.out.println("*************Phone Number was updated successfully!!!*************");
                 System.out.println();
             }
@@ -140,6 +151,7 @@ public class InformationTechnology {
 		
 		histroyIT.deleteIThistory(name);
 		
+		System.out.println();
 		System.out.println("*************Data was Deleted successfully!!!*************");
 		System.out.println();
 		

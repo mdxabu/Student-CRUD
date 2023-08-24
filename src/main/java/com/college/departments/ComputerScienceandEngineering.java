@@ -9,8 +9,6 @@ import java.util.Scanner;
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;
 
-import static com.college.database.DatabaseConnection.getConnection;
-
 public class ComputerScienceandEngineering {
 	
 	Scanner in = new Scanner(System.in);
@@ -29,7 +27,7 @@ public class ComputerScienceandEngineering {
 
     // it is an insert method for CSE Student
     public void insertCSEStudentData() throws SQLException {
-		
+		try {
 		System.out.println("Enter the Student Name:");
 		String name=in.nextLine();
 		this.stdName=name;
@@ -46,20 +44,22 @@ public class ComputerScienceandEngineering {
 
         System.out.println("Enter your Academic year in College [Ex:1,2,3,4] :");
         int Academic_Year = in.nextInt();
-        try {
-            String query = "INSERT INTO CSE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"',"+dob+","+Academic_Year+");";
-            CSEStatement.executeUpdate(query);
-
-            historyCSE.insertCSEhistory(name);
+       
+	    String query = "INSERT INTO CSE VALUES('"+name+"','"+email+"','"+phoneNo+"','"+dept+"',"+dob+","+Academic_Year+");";
+	    CSEStatement.executeUpdate(query);
+	
+	    historyCSE.insertCSEhistory(name);
+	            
+	    System.out.println();
+	    System.out.println("*************Detials was inserted successfully!!!*************");
+	    System.out.println();
         }
         catch (SQLIntegrityConstraintViolationException e){
             System.err.println("Duplicate Key are not allowed!!!");
         }
 		
 
-		
-		System.out.println("*************Detials was inserted successfully!!!*************");
-		System.out.println();
+       
 		
 		
 		
@@ -68,6 +68,7 @@ public class ComputerScienceandEngineering {
     // It is an method for update detials of CSE Students
 	public void updateCSEStudentData() throws SQLException {
 		
+		final String Dept = "CSE";
 		System.out.println("1.update Name");
 		System.out.println("2.Update email");
 		System.out.println("3.Update Phone Number");
@@ -75,7 +76,8 @@ public class ComputerScienceandEngineering {
 		int choice = in.nextInt();
         switch (choice) {
             case 1 -> {
-                String txt = "name";
+            	
+                
                 System.out.println("Enter the old name:");
                 in.nextLine();
                 String oldname = in.nextLine();
@@ -88,14 +90,14 @@ public class ComputerScienceandEngineering {
                 CSEStatement.executeUpdate(query);
 
 
-                historyCSE.updateCSEhistory(txt, oldname);
-
+                historyCSE.updateNamehistory(Dept,oldname,newName);
+                System.out.println();
                 System.out.println("*************Name was updated successfully!!!*************");
                 System.out.println();
             }
             case 2 -> {
 
-                String txt = "mail";
+                try {
                 System.out.println("Enter the old email:");
                 in.nextLine();
                 String oldmail = in.nextLine();
@@ -107,12 +109,18 @@ public class ComputerScienceandEngineering {
                 String query = "UPDATE CSE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
                 CSEStatement.executeUpdate(query);
 
-                historyCSE.updateCSEhistory(txt, newmail);
-                System.out.println("*************email was updated successfully!!!*************");
+                historyCSE.updateMailhistory(Dept,oldmail, newmail);
                 System.out.println();
+                System.out.println("*************Email was updated successfully!!!*************");
+                System.out.println();
+                }
+                catch (Exception e) {
+					System.err.println("This Email is already Exist !!!");
+				}
             }
             case 3 -> {
-                String txt = "phone";
+              
+            	try {
                 System.out.println("Enter the old phone no:");
                 in.nextLine();
                 String old_no = in.nextLine();
@@ -125,10 +133,15 @@ public class ComputerScienceandEngineering {
                 CSEStatement.executeUpdate(query);
 
 
-                historyCSE.updateCSEhistory(txt, stdName);
-
+                historyCSE.updatePhonehistory(Dept,old_no,new_no);
+                
+                System.out.println();
                 System.out.println("*************Phone Number was updated successfully!!!*************");
                 System.out.println();
+            	}
+            	catch (Exception e) {
+					System.err.println("This Phone Number is already Exist!!!");
+				}
             }
             default -> throw new IllegalArgumentException("Unexpected value: " + choice);
         }
@@ -149,6 +162,7 @@ public class ComputerScienceandEngineering {
 		
 		historyCSE.deleteCSEhistory(name);
 		
+		System.out.println();
 		System.out.println("*************Data was Deleted successfully!!!*************");
 		System.out.println();
 		

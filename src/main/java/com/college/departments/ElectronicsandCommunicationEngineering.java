@@ -9,8 +9,6 @@ import java.util.Scanner;
 import com.college.database.DatabaseConnection;
 import com.college.history.DatabaseHistory;
 
-import static com.college.database.DatabaseConnection.getConnection;
-
 public class ElectronicsandCommunicationEngineering {
 	
 	Scanner in = new Scanner(System.in);
@@ -27,6 +25,7 @@ public class ElectronicsandCommunicationEngineering {
 
     public void insertECEStudentData() throws SQLException {
 
+    	try{
         System.out.println("Enter the Student Name:");
         String name = in.nextLine();
         this.stdName = name;
@@ -43,23 +42,28 @@ public class ElectronicsandCommunicationEngineering {
 
         System.out.println("Enter your Academic year in College [Ex:1,2,3,4] :");
         int Academic_Year = in.nextInt();
-        try{
+        
         String query = "INSERT INTO ECE VALUES('" + name + "','" + email + "','" + phoneNo + "','" + dept + "'," + dob + "," + Academic_Year + ");";
         ECEStatement.executeUpdate(query);
 
         historyECE.insertECEhistory(name);
+        
+        System.out.println();
+        System.out.println("*************Detials was inserted successfully!!!*************");
+		System.out.println();
+		
         }
         catch(SQLIntegrityConstraintViolationException e){
         System.err.println("Duplicate Key are not allowed!!!");
     }
 		
-		System.out.println("*************Detials was inserted successfully!!!*************");
-		System.out.println();
+		
 		
 		}
 	
 	public void updateECEStudentData() throws SQLException {
 		
+		final String Dept ="ECE"; 
 		System.out.println("1.update Name");
 		System.out.println("2.Update email");
 		System.out.println("3.Update Phone Number");
@@ -67,7 +71,7 @@ public class ElectronicsandCommunicationEngineering {
 		int choice = in.nextInt();
         switch (choice) {
             case 1 -> {
-                String txt = "name";
+              
                 System.out.println("Enter the old name:");
                 in.nextLine();
                 String oldname = in.nextLine();
@@ -79,13 +83,15 @@ public class ElectronicsandCommunicationEngineering {
                 String query = "UPDATE ECE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
                 ECEStatement.executeUpdate(query);
 
-                historyECE.updateECEhistory(txt, oldname);
+                historyECE.updateNamehistory(Dept, oldname, newName);
 
+                System.out.println();
                 System.out.println("*************Name was updated successfully!!!*************");
                 System.out.println();
             }
             case 2 -> {
-                String txt = "mail";
+               
+            	try {
                 System.out.println("Enter the old email:");
                 in.nextLine();
                 String oldmail = in.nextLine();
@@ -97,13 +103,19 @@ public class ElectronicsandCommunicationEngineering {
                 String query = "UPDATE ECE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
                 ECEStatement.executeUpdate(query);
 
-                historyECE.updateECEhistory(txt, stdName);
-                System.out.println("*************email was updated successfully!!!*************");
+                historyECE.updateMailhistory(Dept, oldmail, newmail);
+                
                 System.out.println();
+                System.out.println("*************Email was updated successfully!!!*************");
+                System.out.println();
+            	}
+            	catch (Exception e) {
+					System.err.println("This Email is already Exist !!!");
+				}
             }
             case 3 -> {
 
-                String txt = "phone";
+               
                 System.out.println("Enter the old phone no:");
                 in.nextLine();
                 String old_no = in.nextLine();
@@ -115,8 +127,9 @@ public class ElectronicsandCommunicationEngineering {
                 String query = "UPDATE ECE SET phoneNo='" + new_no + "'" + "WHERE phoneNo='" + old_no + "';";
                 ECEStatement.executeUpdate(query);
 
-                historyECE.updateECEhistory(txt, stdName);
+                historyECE.updatePhonehistory(Dept, old_no, new_no);
 
+                System.out.println();
                 System.out.println("*************Phone Number was updated successfully!!!*************");
                 System.out.println();
             }
@@ -136,6 +149,7 @@ public void deleteECEStudentData() throws SQLException {
 		
 		historyECE.deleteECEhistory(name);
 		
+		System.out.println();
 		System.out.println("*************Data was Deleted successfully!!!*************");
 		System.out.println();
 		
