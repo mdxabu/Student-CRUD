@@ -24,6 +24,8 @@ public class InformationTechnology {
     public InformationTechnology() throws SQLException, ClassNotFoundException {
     }
 
+    
+    //insert method for students in IT department
     public void insertITStudentData() throws SQLException {
 		
     	try {
@@ -61,6 +63,7 @@ public class InformationTechnology {
 		
 		}
 	
+    //update method for students in IT department
 	public void updateITStudentData() throws SQLException {
 		
 		final String Dept = "IT";
@@ -145,6 +148,8 @@ public class InformationTechnology {
 		
 	}
 	
+	
+	//delete method for students in IT department
 	public void deleteITStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student name to delete:");
@@ -161,6 +166,7 @@ public class InformationTechnology {
 		
 	}
 
+	//read method for students in IT department
 	public void readITStudentData() throws SQLException {
 		
 		String query ="SELECT * FROM IT ORDER BY name;";

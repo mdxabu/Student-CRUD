@@ -22,9 +22,11 @@ public class ElectricalandElectronicsEngineering {
 	
 	String stdName;
 
+	// default constructor
     public ElectricalandElectronicsEngineering() throws SQLException, ClassNotFoundException {
     }
 
+    //insert method for students in EEE department
     public void insertEEEStudentData() throws SQLException {
     	try{
         System.out.println("Enter the Student Name:");
@@ -63,6 +65,7 @@ public class ElectricalandElectronicsEngineering {
 		
 		}
 	
+    //update method for students in EEE department
 	public void updateEEEStudentData() throws SQLException {
 		final String Dept = "EEE";
 		
@@ -146,7 +149,8 @@ public class ElectricalandElectronicsEngineering {
 		
 	}
 	
-public void deleteEEEStudentData() throws SQLException {
+	//delete method for students in EEE department
+	public void deleteEEEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student name to delete:");
 		String name=in.nextLine();
@@ -162,6 +166,7 @@ public void deleteEEEStudentData() throws SQLException {
 		
 	}
 
+	//read method for students in EEE department
 	public void readEEEStudentData() throws SQLException {
 		
 		String query ="SELECT * FROM EEE ORDER BY name;";

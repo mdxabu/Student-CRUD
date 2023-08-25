@@ -23,6 +23,7 @@ public class ElectronicsandCommunicationEngineering {
     public ElectronicsandCommunicationEngineering() throws SQLException, ClassNotFoundException {
     }
 
+    //insert method for students in ECE department
     public void insertECEStudentData() throws SQLException {
 
     	try{
@@ -56,11 +57,9 @@ public class ElectronicsandCommunicationEngineering {
         catch(SQLIntegrityConstraintViolationException e){
         System.err.println("Duplicate Key are not allowed!!!");
     }
-		
-		
-		
 		}
 	
+    //update method for students in ECE department
 	public void updateECEStudentData() throws SQLException {
 		
 		final String Dept ="ECE"; 
@@ -143,7 +142,9 @@ public class ElectronicsandCommunicationEngineering {
 		
 	}
 	
-public void deleteECEStudentData() throws SQLException {
+	
+	//delete method for students in ECE department
+	public void deleteECEStudentData() throws SQLException {
 		
 		System.out.println("Enter the Student name to delete:");
 		String name=in.nextLine();
@@ -159,6 +160,7 @@ public void deleteECEStudentData() throws SQLException {
 		
 	}
 
+	//read method for students in ECE department
 	public void readECEStudentData() throws SQLException {
 		
 		String query ="SELECT * FROM ECE ORDER BY name;";

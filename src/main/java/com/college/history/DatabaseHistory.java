@@ -120,8 +120,8 @@ public class DatabaseHistory{
 	
 	
 	
-	
-public void updateNamehistory(String dept,String oldName,String newName) throws SQLException {
+	//update method for changing names of students for whole departments
+	public void updateNamehistory(String dept,String oldName,String newName) throws SQLException {
 		
 			LocalDateTime ldt = LocalDateTime.now();
 		
@@ -132,7 +132,8 @@ public void updateNamehistory(String dept,String oldName,String newName) throws 
 			
 	}
 
-public void updateMailhistory(String dept,String oldMail,String newMail) throws SQLException {
+	//update method for changing Email of students for whole departments
+	public void updateMailhistory(String dept,String oldMail,String newMail) throws SQLException {
 	
 	LocalDateTime ldt = LocalDateTime.now();
 	
@@ -144,7 +145,8 @@ public void updateMailhistory(String dept,String oldMail,String newMail) throws 
 	history_statement.executeUpdate(historytxt);
 }
 
-public void updatePhonehistory(String dept,String oldNo, String newNo) throws SQLException {
+	//update method for changing Phone Number of students for whole departments
+	public void updatePhonehistory(String dept,String oldNo, String newNo) throws SQLException {
 	
 	LocalDateTime ldt = LocalDateTime.now();
 	
