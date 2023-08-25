@@ -116,7 +116,7 @@ public class InformationTechnology {
             }
             case 3 -> {
                 
-            	
+            	try {
                 System.out.println("Enter the old phone no:");
                 in.nextLine();
                 String old_no = in.nextLine();
@@ -133,6 +133,10 @@ public class InformationTechnology {
                 System.out.println();
                 System.out.println("*************Phone Number was updated successfully!!!*************");
                 System.out.println();
+            	}
+            	catch (Exception e) {
+					System.err.println("This Phone Number is Already Exist!!!");
+				}
             }
             default -> throw new IllegalArgumentException("Unexpected value: " + choice);
         }

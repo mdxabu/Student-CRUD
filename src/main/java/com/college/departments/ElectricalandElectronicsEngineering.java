@@ -136,7 +136,7 @@ public class ElectricalandElectronicsEngineering {
                 System.out.println();
                }
                catch (Exception e) {
-					System.err.println("This Email is already Exist !!!");
+					System.err.println("This Phone Number is already Exist !!!");
 				}
             }
             default -> throw new IllegalArgumentException("Unexpected value: " + choice);
