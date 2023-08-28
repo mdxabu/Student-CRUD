@@ -13,12 +13,14 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class DatabaseConnection {
 	static Scanner in = new Scanner(System.in);
 	
-	//Mysql Database Connection URL
+	//MySql Database Connection URL
 	static String URL = "jdbc:mysql://localhost:3306/college";
     
 	static String user;
 	static String password;
-
+	
+	
+	// Constructor for Initialize the above variables
 	public DatabaseConnection(){
 		
 
@@ -35,7 +37,7 @@ public class DatabaseConnection {
 
 
 	/*
-	 * This nethod is used for getconnection to the mysql database
+	 * This method is used for getConnection to the MySql database
 	 * This function return the Statement type
 	 * */
 

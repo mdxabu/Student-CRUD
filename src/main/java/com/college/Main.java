@@ -20,7 +20,7 @@ public class Main {
 
 
 
-    	// Just Calling the DatabaseConnection class constructor without creatring an reference
+    	// Just Calling the DatabaseConnection class constructor without creating an reference
         new DatabaseConnection();
         
     	while(true) {
@@ -57,9 +57,17 @@ public class Main {
                     System.out.println("Enter your Choice:");
                     int choice1 = in.nextInt();
                     switch (choice1) {
+                    	
+                    	// Insert method for CSE students
                         case 1 -> CSE_obj.insertCSEStudentData();
+                        
+                        // Update method for CSE students
                         case 2 -> CSE_obj.updateCSEStudentData();
+                        
+                        // Delete method for CSE students
                         case 3 -> CSE_obj.deleteCSEStudentData();
+                        
+                        // Read method for CSE students
                         case 4 -> CSE_obj.readCSEStudentData();
                     }
                 }
@@ -75,9 +83,16 @@ public class Main {
                     System.out.println("Enter your Choice:");
                     int choice2 = in.nextInt();
                     switch (choice2) {
+                    	// Insert method for IT students
                         case 1 -> IT_obj.insertITStudentData();
+                        
+                        // Update method for IT students
                         case 2 -> IT_obj.updateITStudentData();
+                        
+                        // Delete method for IT students
                         case 3 -> IT_obj.deleteITStudentData();
+                        
+                        // Read Data method for IT students
                         case 4 -> IT_obj.readITStudentData();
                     }
                 }
@@ -93,9 +108,17 @@ public class Main {
                     System.out.println("Enter your Choice:");
                     int choice3 = in.nextInt();
                     switch (choice3) {
+                    
+                    	// Insert method for EEE students
                         case 1 -> EEE_obj.insertEEEStudentData();
+                        
+                        // Update method for EEE students
                         case 2 -> EEE_obj.updateEEEStudentData();
+                        
+                        // Delete method for EEE students
                         case 3 -> EEE_obj.deleteEEEStudentData();
+                        
+                        // Read method for EEE students
                         case 4 -> EEE_obj.readEEEStudentData();
                     }
                 }
@@ -111,9 +134,17 @@ public class Main {
                     System.out.println("Enter your Choice:");
                     int choice4 = in.nextInt();
                     switch (choice4) {
+                    
+                    	// Insert method for ECE students
                         case 1 -> ECE_obj.insertECEStudentData();
+                        
+                        // Update method for ECE students
                         case 2 -> ECE_obj.updateECEStudentData();
+                        
+                        // Delete method for ECE students
                         case 3 -> ECE_obj.deleteECEStudentData();
+                        
+                        // Read method for ECE students
                         case 4 -> ECE_obj.readECEStudentData();
                     }
                 }
