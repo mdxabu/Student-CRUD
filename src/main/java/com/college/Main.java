@@ -20,10 +20,11 @@ public class Main {
 
 
 
-    	// Just Calling the DatabaseConnection class constructor without creating an reference
-        new DatabaseConnection();
-        
-    	while(true) {
+    	// Just Creating an on-bject for the DatabaseConnection class
+
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+
+        while(true) {
     		System.out.println();
     		
     		System.out.println("Choose the Department:");
