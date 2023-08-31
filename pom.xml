@@ -20,6 +20,11 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
+        
+        
+		  
+
+			
 
         <!-- https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
 		<dependency>

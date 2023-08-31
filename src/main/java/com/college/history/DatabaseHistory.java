@@ -1,6 +1,6 @@
 /*
- * This Class is Mainly used for Saving all the detials from the departments
- * It can save the Inserted Data,Upadated data & Deleted Data
+ * This Class is Mainly used for Saving all the details from the departments
+ * It can save the Inserted Data,Updated data & Deleted Data
  * It stores with Local time and Date
  */
 

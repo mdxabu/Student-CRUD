@@ -173,20 +173,32 @@ public class InformationTechnology {
 		
 		ResultSet rs = ITStatement.executeQuery(query);
 
-        System.out.println("NAME"
-                +"                    "+"EMAIL"
-                +"                    "+"PHONE NUMBER"
-                +"                    "+"DEPT"
-                +"                    "+"DOB"
-                +"                    "+"ACADEMIC YEAR");
+        System.out.println("---------------------------------------------------------------------------------------------------------");
+
+        System.out.format("%7s %20s %20s %18s %15s %18s","NAME","EMAIL","PHONE","DEPT","DOB","ACADEMIC YEAR");
+        System.out.println();
+
+        System.out.println("----------------------------------------------------------------------------------------------------------");
 		
 		while (rs.next()){
-            System.out.println(rs.getString("name")
-                    +"          "+rs.getString("email")
-                    +"          "+rs.getString("phoneNo")
-                    +"          "+rs.getString("dept")
-                    +"          "+rs.getInt("dob")
-                    +"          "+rs.getInt("Academic_Year"));
+
+            String name = rs.getString("name");
+
+            String email = rs.getString("email");
+
+            String phone = rs.getString("phoneNo");
+
+            String dept = rs.getString("dept");
+
+            int dob = rs.getInt("dob");
+
+            int year = rs.getInt("Academic_Year");
+
+
+            System.out.format("%7s %25s %18s %15s %15s %13s",name,email,phone,dept,dob,year);
+            System.out.println();
+            System.out.println("----------------------------------------------------------------------------------------------------------");
+
         }
 		
 	}
