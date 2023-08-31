@@ -1,5 +1,5 @@
 # Student-CRUD Application
-![build-btn](https://img.shields.io/badge/build%20with-JDBC-brightgreen?style=default&logo=eclipse) ![version-btn](https://img.shields.io/badge/maven%20central-4.0.0-blue?logo=mvn)    
+![build-btn](https://img.shields.io/badge/build%20with-JDBC-brightgreen?style=default&logo=eclipse) ![version-btn](https://img.shields.io/badge/maven&dash;central-v4.0.0-blue?logo=mvn)    
 
 
 Welcome to the Student-CRUD repository! This repository contains a simple application for performing CRUD (Create, Read, Update, Delete) operations on student records. The application is designed to manage student information, allowing you to add, view, edit, and delete student records.
