@@ -49,63 +49,7 @@ DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 
 
 # MySQL Database
-## Manually
-- Create the Mysql database by running the following command
-```sql
-  CREATE DATABASE college;
-  USE college;
-  ```
-- And create four tables
-  <br>
-  
-```CSE👇 DEPT```
-
-```sql
-CREATE TABLE CSE(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
-```IT👇 DEPT```
-
-```sql
-CREATE TABLE IT(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
-```EEE👇 DEPT```
-
-```sql
-CREATE TABLE EEE(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
-```ECE👇 DEPT```
-
-```sql
-CREATE TABLE ECE(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
+## For MySQL Database setup see the ➡️ [SETUP.md](https://github.com/f-mohamed-abdullah/Student-CRUD/blob/main/SETUP.md)
 ## Automatically
 Run the following command to your terminal:
 
