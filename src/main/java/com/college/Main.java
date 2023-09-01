@@ -20,9 +20,9 @@ public class Main {
 
 
 
-    	// Just Creating an on-bject for the DatabaseConnection class
+    	// Just Creating an object for the DatabaseConnection class
 
-        DatabaseConnection databaseConnection = new DatabaseConnection();
+       new DatabaseConnection();
 
         while(true) {
     		System.out.println();

@@ -24,7 +24,7 @@ public class DatabaseConnection {
 	public DatabaseConnection(){
 		
 
-		
+
 		Dotenv getenvirnmentalVariables = Dotenv.configure().load();
 		
 		// get the Environmental value using Key(USERNAME)
@@ -50,7 +50,7 @@ public class DatabaseConnection {
 		statement = connection.createStatement();
 
 		return statement;
-        
+
 	}
     
     

@@ -15,23 +15,24 @@
     </properties>
     <!--  Dependency for mysql-connector-java-->
     <dependencies>
+
+
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
-        
-        
-		  
 
-			
+
 
         <!-- https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
-		<dependency>
-		    <groupId>io.github.cdimascio</groupId>
-		    <artifactId>dotenv-java</artifactId>
-		    <version>3.0.0</version>
-		</dependency>
+
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>2.3.2</version>
+        </dependency>
 
 
     </dependencies>

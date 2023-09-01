@@ -5,10 +5,6 @@
  */
 
 
-
-
-
-
 package com.college.history;
 
 import java.sql.SQLException;
@@ -37,9 +33,9 @@ public class DatabaseHistory{
 	
 	public void deleteCSEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted from CSE DataBase"+" "+ldt;
+		String message = "s detials are Deleted from CSE DataBase"+" "+ldt;
 		
-		String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
+		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
 	
@@ -61,9 +57,9 @@ public class DatabaseHistory{
 	
 	public void deleteIThistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted in IT DataBase"+" "+ldt;
-		
-		String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
+		String message = "s was Deleted in IT DataBase"+" "+ldt;
+
+		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
 	
@@ -84,9 +80,9 @@ public class DatabaseHistory{
 	
 	public void deleteEEEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted from EEE DataBase"+" "+ldt;
-		
-		String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
+		String message = "s was Deleted from EEE DataBase"+" "+ldt;
+
+		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
 	
@@ -110,9 +106,9 @@ public class DatabaseHistory{
 	
 	public void deleteECEhistory(String name) throws SQLException {
 		LocalDateTime ldt = LocalDateTime.now();
-		String message = " was Deleted from ECE DataBase"+" "+ldt;
-		
-		String historytxt = "INSERT INTO history VALUES ('"+name+message+"');";
+		String message = "s was Deleted from ECE DataBase"+" "+ldt;
+
+		String historytxt = "INSERT INTO history VALUES ('"+name+"'"+"'"+message+"');";
 		history_statement.executeUpdate(historytxt);
 	}
 	
