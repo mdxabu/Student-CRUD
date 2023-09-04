@@ -49,81 +49,24 @@ DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 
 
 # MySQL Database
-## Manually
-- Create the Mysql database by running the following command
-```sql
-  CREATE DATABASE college;
-  USE college;
-  ```
-- And create four tables
-  <br>
-  
-```CSE👇 DEPT```
-
-```sql
-CREATE TABLE CSE(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
-```IT👇 DEPT```
-
-```sql
-CREATE TABLE IT(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
-```EEE👇 DEPT```
-
-```sql
-CREATE TABLE EEE(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
-```ECE👇 DEPT```
-
-```sql
-CREATE TABLE ECE(
-    name VARCHAR(20),
-    email VARCHAR(50) UNIQUE,
-    phoneNo VARCHAR(10) UNIQUE,
-    dept VARCHAR(20),
-    dob year,
-    Academic_Year INT
-);
-```
+## For MySQL Database setup see the ➡️ [SETUP.md](https://github.com/f-mohamed-abdullah/Student-CRUD/blob/main/SETUP.md)
+## or
 ## Automatically
 Run the following command to your terminal:
 
 ```bash
-mysql < create_tables.sql
+mysql > create_tables.sql
 ```
 
   
 # Getting Started
 ## Installation
 - Fork this repository
-- Clone the repository:
-```bash
-git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git
-```
+- Clone the repository
 - Navigate to the project directory:
 ```bash
-cd Student-CRUD
+> git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git
+> cd Student-CRUD
 ```
 # Contributing
 Contributions to this repository are welcome. If you find a bug, have a feature request, or want to contribute in any other way, please follow these steps:
@@ -132,7 +75,7 @@ Contributions to this repository are welcome. If you find a bug, have a feature 
 
 - Create a new branch for your feature or bug fix or you can work on main branch too:
 ```bash
-  git checkout -b test
+> git checkout -b test
 ```
 - Make your changes and commit them with descriptive commit messages.
 
