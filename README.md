@@ -38,13 +38,13 @@ DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
 // get the Environmental value using Key(PASSWORD)
 DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 ```
-# Dependency for Mysql Connector Java
+# Dependency for AWS RDS Mysql Connector Java
 ```xml
-<dependency>
-  <groupId>mysql</groupId>
-  <artifactId>mysql-connector-java</artifactId>
-  <version>8.0.33</version>
-</dependency>
+  <dependency>
+     <groupId>software.aws.rds</groupId>
+     <artifactId>aws-mysql-jdbc</artifactId>
+     <version>1.1.9</version>
+   </dependency>
 ```
 
 
