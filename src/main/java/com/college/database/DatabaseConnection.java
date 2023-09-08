@@ -14,7 +14,7 @@ public class DatabaseConnection {
 	static Scanner in = new Scanner(System.in);
 	
 	//MySql Database Connection URL
-	static String URL = "jdbc:mysql://localhost:3306/college";
+	static String URL = "jdbc:mysql:aws://database-1.ceha9poaecgm.ap-south-1.rds.amazonaws.com:3306/college";
     
 	static String user;
 	static String password;
@@ -44,7 +44,7 @@ public class DatabaseConnection {
 	public static Statement getConnection() throws ClassNotFoundException, SQLException {
 
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("software.aws.rds.jdbc.mysql.Driver");
 		Statement statement;
 		Connection connection = DriverManager.getConnection(URL, user, password);
 		statement = connection.createStatement();

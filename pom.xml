@@ -17,12 +17,18 @@
     <dependencies>
 
 
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
-        </dependency>
+        </dependency>-->
+            <dependency>
+                <groupId>software.aws.rds</groupId>
+                <artifactId>aws-mysql-jdbc</artifactId>
+                <version>1.1.9</version>
+            </dependency>
+
 
 
 
