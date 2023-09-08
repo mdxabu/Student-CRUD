@@ -11,27 +11,37 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 
 public class DatabaseConnection {
+
+
+	static Dotenv getenvirnmentalVariables = Dotenv.configure().load();
 	static Scanner in = new Scanner(System.in);
+
+	String awsHost = getenvirnmentalVariables.get("AWSENDPOINT");
+
+	int awsPort = 3306;
+
+	String awsDataBaseName = "college";
 	
-	//MySql Database Connection URL
-	static String URL = "jdbc:mysql:aws://database-1.ceha9poaecgm.ap-south-1.rds.amazonaws.com:3306/college";
+
+
     
 	static String user;
 	static String password;
+
+	static String URL;
 	
 	
 	// Constructor for Initialize the above variables
 	public DatabaseConnection(){
-		
 
-
-		Dotenv getenvirnmentalVariables = Dotenv.configure().load();
-		
 		// get the Environmental value using Key(USERNAME)
 		DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
 		
 		// get the Environmental value using Key(PASSWORD)
 		DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
+
+		//AWS RDS Connection URL
+		DatabaseConnection.URL = "jdbc:mysql:aws://"+awsHost+":"+awsPort+"/"+awsDataBaseName;
 		
 	}
 
@@ -43,7 +53,7 @@ public class DatabaseConnection {
 
 	public static Statement getConnection() throws ClassNotFoundException, SQLException {
 
-
+		// AWS Driver class name
 		Class.forName("software.aws.rds.jdbc.mysql.Driver");
 		Statement statement;
 		Connection connection = DriverManager.getConnection(URL, user, password);
