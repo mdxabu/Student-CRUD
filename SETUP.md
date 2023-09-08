@@ -1,3 +1,8 @@
+# Create a new Connection for AWS RDS in Mysql workbench
+- Put the AWS endpoint in the host field
+- and put the AWS Master username & AWS Master password
+- and give test connection
+
 # Setup the Mysql workbench
 
 ## Create a database
