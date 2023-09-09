@@ -7,6 +7,7 @@
 
 package com.college.history;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDateTime;
@@ -152,7 +153,24 @@ public class DatabaseHistory{
 	history_statement.executeUpdate(historytxt);
 }
 
+	public void readHistory() throws SQLException {
+		String query ="SELECT * FROM history;";
 
+		ResultSet rs = history_statement.executeQuery(query);
+
+		System.out.println("==========================================================================================================================");
+
+		System.out.format("\t\t\t\t\t\tHISTORY\t\t\t\t\t\t");
+		System.out.println();
+
+		System.out.println("==========================================================================================================================");
+
+		while (rs.next()){
+			System.out.println(rs.getString("history"));
+			System.out.println("--------------------------------------------------------------------------------------------------------------------------");
+		}
+		System.out.println("==========================================================================================================================");
+	}
 
 	
 	

@@ -5,6 +5,7 @@ import com.college.departments.ComputerScienceandEngineering;
 import com.college.departments.ElectricalandElectronicsEngineering;
 import com.college.departments.ElectronicsandCommunicationEngineering;
 import com.college.departments.InformationTechnology;
+import com.college.history.DatabaseHistory;
 
 import java.util.Scanner;
 
@@ -36,8 +37,10 @@ public class Main {
     		System.out.println("3.Electrical and Electronics Engineering");
     		
     		System.out.println("4.Electronics and Communication Engineering");
-    		
-    		System.out.println("5.EXIT");
+
+            System.out.println("5.Read history");
+
+    		System.out.println("6.EXIT");
     		
     		System.out.println();
     		
@@ -150,6 +153,10 @@ public class Main {
                     }
                 }
                 case 5 -> {
+                    DatabaseHistory history = new DatabaseHistory();
+                    history.readHistory();
+                }
+                case 6 -> {
                     System.err.println("Thanks for using this project😊!!!");
                     System.exit(0);
                 }
