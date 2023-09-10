@@ -26,7 +26,7 @@ CREATE TABLE CSE(
     Academic_Year INT
 );
 ```
-## the below query will used to see the data in CSE 🔽
+## the below query will use to see the data in CSE 🔽
 ```sql
 SELECT * FROM CSE;
 ```
@@ -42,7 +42,7 @@ CREATE TABLE IT(
 );
 ```
 
-## the below query will used to see the data in IT 🔽
+## the below query will use to see the data in IT 🔽
 ```sql
 SELECT * FROM IT;
 ```
@@ -58,7 +58,7 @@ CREATE TABLE EEE(
 );
 ```
 
-## the below query will used to see the data in EEE 🔽
+## the below query will use to see the data in EEE 🔽
 ```sql
 SELECT * FROM EEE;
 ```
@@ -73,7 +73,7 @@ CREATE TABLE ECE(
     Academic_Year INT
 );
 ```
-## the below query will used to see the data in ECE 🔽
+## the below query will use to see the data in ECE 🔽
 ```sql
 SELECT * FROM ECE;
 ```
@@ -85,7 +85,7 @@ CREATE TABLE history(
     history VARCHAR(150)
 );
 ```
-## the below query will used to see the histories 🔽
+## the below query will use to see the histories 🔽
 ```sql
 SELECT * FROM history;
 ```

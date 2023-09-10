@@ -153,6 +153,7 @@ public class Main {
                     }
                 }
                 case 5 -> {
+                    // Creating an instance for DatabaseHistory class
                     DatabaseHistory history = new DatabaseHistory();
                     history.readHistory();
                 }

@@ -16,17 +16,23 @@ public class DatabaseConnection {
 	static Dotenv getenvirnmentalVariables = Dotenv.configure().load();
 	static Scanner in = new Scanner(System.in);
 
+	//Getting an AWS endpoint
+
 	String awsHost = getenvirnmentalVariables.get("AWSENDPOINT");
 
-	int awsPort = 3306;
 
+	//Getting an AWS port
+	int awsPort = 3306;
+	//Getting an AWS database name
 	String awsDataBaseName = "college";
 	
 
 
-    
+    //AWS username
 	static String user;
+	//AWS password
 	static String password;
+
 
 	static String URL;
 	
@@ -52,6 +58,8 @@ public class DatabaseConnection {
 	 * */
 
 	public static Statement getConnection() throws ClassNotFoundException, SQLException {
+
+
 
 		// AWS Driver class name
 		Class.forName("software.aws.rds.jdbc.mysql.Driver");
