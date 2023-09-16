@@ -80,7 +80,7 @@ SELECT * FROM ECE;
 ```
 
 # Create a table for history 
-## It stores the all movements with local time taken in tables using program  
+## It stores the all movements with local time with date taken in tables using program  
 ```sql
 CREATE TABLE history(
     history VARCHAR(150)
