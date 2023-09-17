@@ -1,3 +1,17 @@
+/*
+* Database is connected with AWS RDS
+* But one problem it creates new ip address
+* If you want to access the data you just want to creatr user and allow all grants
+*/
+
+
+
+
+
+
+
+
+
 package com.college.database;
 
 import java.sql.Connection;
