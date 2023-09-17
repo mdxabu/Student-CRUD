@@ -17,7 +17,7 @@ import com.college.database.DatabaseConnection;
 public class DatabaseHistory{
 	
 	
-	
+	// Getting an statement from DatabaseConnection class
 	Statement history_statement = DatabaseConnection.getConnection();
 
     public DatabaseHistory() throws SQLException, ClassNotFoundException {
