@@ -49,10 +49,8 @@ DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 
 
 # MySQL Database
-## For MySQL Database setup see the ➡️ [SETUP.md](https://github.com/f-mohamed-abdullah/Student-CRUD/blob/main/SETUP.md)
-## or
-## Automatically
-Run the following command to your terminal:
+## For MySQL Database setup see the ➡️ [SETUP.md](https://github.com/f-mohamed-abdullah/Student-CRUD/blob/main/SETUP.md) or
+## you can run the following command to your terminal:
 
 ```bash
 mysql > create_tables.sql
