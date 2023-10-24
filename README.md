@@ -38,6 +38,11 @@ DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
 // get the Environmental value using Key(PASSWORD)
 DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
 ```
+# Load the AWS Driver 
+```java
+// AWS Driver class name
+Class.forName("software.aws.rds.jdbc.mysql.Driver");
+```
 # Dependency for AWS RDS Mysql Connector Java
 ```xml
   <dependency>
