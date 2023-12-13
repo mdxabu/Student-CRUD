@@ -5,8 +5,8 @@
 
 
 
-Welcome to the Student-CRUD repository! This repository contains a simple application for performing CRUD (Create, Read, Update, Delete) operations on student records. The application is designed to manage student information, allowing you to add, view, edit, and delete student records.
-# Mindmap representation of this project
+Welcome to the Student-CRUD repository! This repository contains a simple java application used for performing CRUD (Create, Read, Update, Delete) operations on student records. The application is designed to manage student information, allowing you to add, view, edit, and delete student records.
+# Pictorial representation of this project
 ![newRep](https://github.com/f-mohamed-abdullah/Student-CRUD/assets/115330277/c9de46ea-3fed-41d2-9634-bf66bcc1edb2)
 
 
