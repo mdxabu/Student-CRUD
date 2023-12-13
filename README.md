@@ -61,7 +61,7 @@ Class.forName("software.aws.rds.jdbc.mysql.Driver");
 ## you can run the following command on your terminal:
 
 ```bash
-mysql > create_tables.sql
+MySQL > create_tables.sql
 ```
 
   
@@ -75,11 +75,11 @@ mysql > create_tables.sql
 > cd Student-CRUD
 ```
 # Contributing
-Contributions to this repository are welcome. If you find a bug, have a feature request, or want to contribute in any other way, please follow these steps:
+Contributing to this repository is welcome. If you find a bug, have a feature request, or want to contribute in any other way, please follow these steps:
 
 - Fork the repository.
 
-- Create a new branch for your feature or bug fix or you can work on main branch too:
+- Create a new branch for your feature or bug fix or you can work on the main branch too:
 ```bash
 > git checkout -b test
 ```
