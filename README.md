@@ -22,6 +22,8 @@ Welcome to the Student-CRUD repository! This repository contains a simple java a
   USERNAME=your_mysql_username
   PASSWORD=your_mysql_password
 ```
+or
+Store on your environmental variables space.
 # Depenedency for Dotenv-java
 ```xml
 <dependency>
