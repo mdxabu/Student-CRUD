@@ -9,37 +9,20 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <!--  Dependency for mysql-connector-java-->
+
+
+
     <dependencies>
 
-
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
-        </dependency>-->
             <dependency>
                 <groupId>software.aws.rds</groupId>
                 <artifactId>aws-mysql-jdbc</artifactId>
                 <version>1.1.9</version>
             </dependency>
-
-
-
-
-        <!-- https://mvnrepository.com/artifact/io.github.cdimascio/dotenv-java -->
-
-        <dependency>
-            <groupId>io.github.cdimascio</groupId>
-            <artifactId>dotenv-java</artifactId>
-            <version>2.3.2</version>
-        </dependency>
-
 
     </dependencies>
 

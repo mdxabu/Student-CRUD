@@ -1,7 +1,7 @@
 /*
 * Database is connected with AWS RDS
 * But one problem it creates new ip address
-* If you want to access the data you just want to creatr user and allow all grants
+* If you want to access the data you just want to create user and allow all grants
 */
 
 package com.college.database;
@@ -12,19 +12,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import io.github.cdimascio.dotenv.Dotenv;
-
 
 
 public class DatabaseConnection {
 
 
-	static Dotenv getenvirnmentalVariables = Dotenv.configure().load();
+
 	static Scanner in = new Scanner(System.in);
 
 	//Getting an AWS endpoint
 
-	String awsHost = getenvirnmentalVariables.get("AWSENDPOINT");
+	String awsHost = System.getenv("AWSENDPOINT");
 
 
 	//Getting an AWS port
@@ -49,10 +47,10 @@ public class DatabaseConnection {
 	public DatabaseConnection(){
 
 		// get the Environmental value using Key(USERNAME)
-		DatabaseConnection.user = getenvirnmentalVariables.get("USERNAME");
+		DatabaseConnection.user = System.getenv("USERNAME");
 		
 		// get the Environmental value using Key(PASSWORD)
-		DatabaseConnection.password = getenvirnmentalVariables.get("PASSWORD");
+		DatabaseConnection.password = System.getenv("PASSWORD");
 
 		//AWS RDS Connection URL
 		DatabaseConnection.URL = "jdbc:mysql:aws://"+awsHost+":"+awsPort+"/"+awsDataBaseName;
