@@ -53,7 +53,7 @@ public class DatabaseConnection {
 		DatabaseConnection.password = System.getenv("PASSWORD");
 
 		//AWS RDS Connection URL
-		DatabaseConnection.URL = "jdbc:mysql:aws://"+awsHost+":"+awsPort+"/"+awsDataBaseName;
+		DatabaseConnection.URL = "jdbc:mysql://"+awsHost+":"+awsPort+"/"+awsDataBaseName;
 		
 	}
 
@@ -68,7 +68,7 @@ public class DatabaseConnection {
 
 
 		// AWS Driver class name
-		Class.forName("software.aws.rds.jdbc.mysql.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		Statement statement;
 		Connection connection = DriverManager.getConnection(URL, user, password);
 		statement = connection.createStatement();

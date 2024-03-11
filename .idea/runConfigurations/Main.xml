@@ -1,5 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <envs>
+      <env name="awsHost" value="localhost" />
+      <env name="PASSWORD" value="password" />
+      <env name="USERNAME" value="root" />
+    </envs>
     <option name="MAIN_CLASS_NAME" value="com.college.Main" />
     <module name="jdbc-mav" />
     <extension name="coverage">
