@@ -2,6 +2,9 @@
 * Database is connected with AWS RDS
 * But one problem it creates new ip address
 * If you want to access the data you just want to create user and allow all grants
+*
+* @author: mdxabu
+* @since: 2023
 */
 
 package com.college.database;
@@ -22,7 +25,7 @@ public class DatabaseConnection {
 
 	//Getting an AWS endpoint
 
-	String awsHost = System.getenv("AWSENDPOINT");
+	String awsHost = "localhost";
 
 
 	//Getting an AWS port

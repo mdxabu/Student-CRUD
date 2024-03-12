@@ -87,7 +87,9 @@ public class ComputerScienceandEngineering {
 
                 String newName = in.nextLine();
 
-                String query = "UPDATE CSE SET name=" + "'" + newName + "'" + "WHERE name='" + oldname + "';";
+                String query = "UPDATE CSE SET name="
+                        + "'" + newName + "'"
+                        + "WHERE name='" + oldname + "';";
                 CSEStatement.executeUpdate(query);
 
 
@@ -107,7 +109,9 @@ public class ComputerScienceandEngineering {
 
                 String newmail = in.nextLine();
 
-                String query = "UPDATE CSE SET email=" + "'" + newmail + "'" + "WHERE email='" + oldmail + "';";
+                String query = "UPDATE CSE SET email="
+                        + "'" + newmail + "'" +
+                        "WHERE email='" + oldmail + "';";
                 CSEStatement.executeUpdate(query);
 
                 historyCSE.updateMailhistory(Dept,oldmail, newmail);
@@ -179,12 +183,12 @@ public class ComputerScienceandEngineering {
 		
 		ResultSet rs = CSEStatement.executeQuery(query);
 
-        System.out.println("---------------------------------------------------------------------------------------------------------");
+        System.out.println("----------+------------------------------+----------------------+------------------+---------------+----------");
 
         System.out.format("%7s %20s %20s %18s %15s %18s","NAME","EMAIL","PHONE","DEPT","DOB","ACADEMIC YEAR");
         System.out.println();
 
-        System.out.println("----------------------------------------------------------------------------------------------------------");
+        System.out.println("----------+------------------------------+----------------------+------------------+---------------+----------");
 
 
 		while (rs.next()){
@@ -202,9 +206,9 @@ public class ComputerScienceandEngineering {
             int year = rs.getInt("Academic_Year");
 
 
-            System.out.format("%7s %25s %18s %15s %15s %13s",name,email,phone,dept,dob,year);
+            System.out.format("%7s %30s %15s %15s %15s %13s",name,email,phone,dept,dob,year);
             System.out.println();
-            System.out.println("----------------------------------------------------------------------------------------------------------");
+            System.out.println("----------+------------------------------+----------------------+------------------+---------------+----------");
 
 
         }
