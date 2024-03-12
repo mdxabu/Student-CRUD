@@ -1,0 +1,7 @@
+com\college\departments\ElectricalandElectronicsEngineering.class
+com\college\departments\ComputerScienceandEngineering.class
+com\college\departments\ElectronicsandCommunicationEngineering.class
+com\college\departments\InformationTechnology.class
+com\college\Main.class
+com\college\database\DatabaseConnection.class
+com\college\history\DatabaseHistory.class
