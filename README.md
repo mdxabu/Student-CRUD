@@ -1,5 +1,5 @@
 # Student-CRUD Application
-![version-btn](https://img.shields.io/badge/maven&dash;central-v4.0.0-blue?logo=mvn)   ![GitHub License](https://img.shields.io/github/license/mdxabu/Student-CRUD) ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/mdxabu/Student-CRUD)  ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/abustwt)
+  ![GitHub License](https://img.shields.io/github/license/mdxabu/Student-CRUD) 
 
 
 
