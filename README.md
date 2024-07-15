@@ -2,10 +2,10 @@
   ![GitHub License](https://img.shields.io/github/license/mdxabu/Student-CRUD) 
 
 
+> [!IMPORTANT]
+> This Project is officially moved from `AWS MySQL RDS` to Local `MySQL`.
 
-
-
-Welcome to the Student-CRUD repository! This repository contains a simple java application used for performing CRUD (Create, Read, Update, Delete) operations on student records. The application is designed to manage student information, allowing you to add, view, edit, and delete student records.
+Welcome to the Student-CRUD repository! This repository contains a simple Java application used for performing CRUD (Create, Read, Update, Delete) operations on student records. The application is designed to manage student information, allowing you to add, view, edit, and delete student records.
 # Pictorial representation of this project
 
 
@@ -14,7 +14,7 @@ Welcome to the Student-CRUD repository! This repository contains a simple java a
 
 
 # Features
-- Create: Add new student records to the database, including details like name, age, gender, and contact information.
+- Create: Add new student records to the database, including name, age, gender, and contact information.
 - Read: View a list of all student records with relevant details.
 - Update: Edit existing student records to reflect any changes in their information.
 - Delete: Remove student records from the database when they are no longer needed.
