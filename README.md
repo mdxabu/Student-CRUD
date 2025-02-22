@@ -75,7 +75,7 @@ MySQL > create_tables.sql
 - Clone the repository
 - Navigate to the project directory:
 ```bash
-> git clone https://github.com/f-mohamed-abdullah/Student-CRUD.git
+> git clone https://github.com/mdxabu/Student-CRUD.git
 > cd Student-CRUD
 ```
 # Contributing
